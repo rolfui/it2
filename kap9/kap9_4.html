@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="UTF-8">
+        <title>WAAPI</title>
+        <link rel="stylesheet" href="css/styles4.css">
+    </head>
+    <body>
+       	<div class="buttons">
+       		<button id="btnStart">Start</button>
+       		<button id="btnPause">Pause</button>
+       		<button id="btnReverse">Revers</button>
+       		<br>
+       		<input type="range" min="0.1" max="10" value="1" id="myInp">
+       	</div>
+		
+        <div id="animDiv">Web Animations API, WAAPI</div>
+        
+        <script>
+			var myDiv = document.getElementById("animDiv");
+			var btnStart = document.getElementById("btnStart");
+			var btnPause = document.getElementById("btnPause");
+			var btnReverse = document.getElementById("btnReverse");
+			var myInp = document.getElementById("myInp");
+			
+			var myAnim = myDiv.animate([
+				{transform: "rotate(0deg)", top: "100px", left: "0px"},
+				{transform: "rotate(70deg)", top: "200px", left: "100px"}
+			],{
+				duration: 2000,  //millisekunder 2000 ms  = 2 s
+				easing: "ease-in-out",
+				iterations: Infinity,
+				direction: "alternate",
+				fill: "forwards"
+			});	//2000ms=2s
+			
+			btnStart.onclick = function(){
+				myAnim.play();
+			}
+
+			btnPause.onclick = function(){
+				myAnim.pause();
+			}
+			
+			btnReverse.onclick = function(){
+				myAnim.reverse();
+			}
+						
+			myInp.onchange = function(){
+				myAnim.playbackRate=myInp.value;
+			}
+			
+			
+		</script>
+        
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+			var myInp = document.getElementById("myInp");
+			
+						
+			myInp.onchange = function(){
+				myAnim.playbackRate=myInp.value;
+			}
+									
+												
+															
+																		
+																								btnPause.onclick = function(){
+				myAnim.pause();
+			}
+			
+			btnReverse.onclick = function(){
+				myAnim.reverse();
+			}
+
+			
+						
+												var btnStop = document.getElementById("btnStop");
+			var btnPause = document.getElementById("btnPause");
+			var btnReverse = document.getElementById("btnReverse");
+
+			
+			btnStart.onclick = function(){
+				myAnim.play();
+			}
+
+			btnPause.onclick = function(){
+				myAnim.pause();
+			}
+
+				
+												{transform: "rotate(0deg)"},
+				{transform: "rotate(70deg)"}
+
+
+{
+				duration: 2000,//millisekunder 2000 ms  = 2 s
+				easing: "ease-in-out",
+				iterations: 3,
+				direction: "alternate"
+			}
+
+-->
+
+
+
+
+
+
+

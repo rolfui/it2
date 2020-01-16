@@ -1,0 +1,11 @@
+body {
+  background-color: white;
+}
+
+#mus {
+    position: absolute;
+}
+
+span {
+    font-size: 30px;
+}

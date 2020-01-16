@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Spill 3</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+        <div id="divTall"></div>
+        <script>
+            var divTall = document.getElementById("divTall"); //Refererer til div
+            var tall = 0;
+
+            function tellOpp() {
+                divTall.innerHTML = tall;
+                tall += 1;
+                if(tall <= 10) {
+                    //setTimeout(tellOpp,100);
+                    //requestAnimationFrame(tellOpp); //Med forsinkelse
+					tellOpp();
+                    tellOpp();
+                }
+            }
+            
+            tellOpp(); //Kaller opp funksjonen første gang
+        </script>
+</body>
+</html>

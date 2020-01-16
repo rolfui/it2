@@ -1,0 +1,81 @@
+.skalerbar {
+    background-color: blue;
+	width: 200px;
+	height: 30px;
+	transition: width 2s linear 3s, height 4s ease 2s, background-color 1s;
+}
+
+.skalerbar:focus{
+	width: 300px;
+	height: 100px;
+}
+
+.skalerbar:hover {
+	background-color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.skalerbar {
+    background-color: #ccc;
+    width: 80px;
+    height: 30px;
+    transition: width 1s, height 3s;
+}
+
+
+.skalerbar:focus {
+    width: 300px;
+    height: 200px;
+    background-color: #fff; 
+}
+
+
+
+
+.skalerbar:hover {
+    background-color: #eee;
+}
+*/
+
+
+/*
+.skalerbar {
+    background-color: #ccc;
+    width: 80px;
+    transition: width 1s;
+}
+*/
+
+/*    transition: width 1s, background-color 2s; */

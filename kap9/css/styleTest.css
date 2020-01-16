@@ -1,0 +1,76 @@
+
+body {
+    background-color: white;
+    text-align: center;
+}
+
+#container {
+    margin: auto;
+    text-align: center;
+    display: grid;
+    align-content: center;    
+    justify-content: space-around;
+    width: 80%;
+    grid-template-columns: repeat(4,1fr);
+    transition: 5s;    
+}
+
+div .content{ 
+    background-color: lightblue;
+    padding: 10px;
+    margin: 5px;
+    width: 40%;
+}
+
+div :hover {
+    background-color: bisque;
+    transition: 1s;
+}
+
+p {
+    margin: auto;
+    width:300px;
+    height:30px;
+    background-color: LimeGreen;
+	text-align: center;
+	transition: transform 2s, background-color 8s;
+	transform-origin: left bottom;
+}
+
+p:active{
+    
+    transform: rotate(70deg) scale(0.5);
+    
+	background-color: red;
+	
+}
+
+button {
+    margin: auto;
+    background-color: lightgrey;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+*/
+
+/*    transform-origin: left bottom;    */
+/*    transition: transform 2s;         */

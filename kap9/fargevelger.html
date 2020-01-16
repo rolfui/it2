@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="UTF-8">
+        <title>Velg bakgrunnsfarge</title>
+        <link rel="stylesheet" href="css/fargevelger.css">
+    </head>
+    <body>
+        <label for="velgFarge">Velg bakgrunnsfarge: </label>
+        <input id="velgFarge" placeholder="Velg farge på nettsiden ..."  value="rgb(255,255,255)" type="color">
+        
+        <!--<input id="fargeSlider" type="range" min="0" max="255" value=0>-->
+        <!--<div id="rangeValue"></div>-->
+        
+        <script>
+            let velgFarge = document.getElementById("velgFarge");
+            //let fargeSlider = document.getElementById("fargeSlider");
+            //let rangeValue = document.getElementById("rangeValue");
+            
+            //fargeSlider.oninput=function(){rangeValue.innerHTML=fargeSlider.value};
+            
+            velgFarge.oninput=function(){
+                document.body.style.backgroundColor = velgFarge.value;
+                setTimeout(function(){document.body.style.backgroundColor = "rgb(200,200,200)"}, 4000);
+            }
+        </script>
+    </body>
+</html>

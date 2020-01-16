@@ -1,0 +1,108 @@
+@keyframes rotasjon{
+	0% {
+		transform: rotate(0deg);
+		top: 0px;
+		left: 0px;
+        background-color: LimeGreen;
+	}
+	
+	25% {
+		transform: rotate(70deg);
+		top: 100px;
+		left: 100px;
+		background-color: red;
+	}
+	50% {
+		transform: rotate(50deg);
+		top: 100px;
+		left: 100px;
+		background-color: limegreen;
+	}
+	75% {
+		transform: rotate(70deg);
+		top: 100px;
+		left: 100px;
+		background-color: red;
+	}
+	
+	100% {
+		transform: rotate(0deg);
+		top: 0px;
+		left: 150px;
+		background-color: blue;
+	}
+	
+}
+
+div {
+    width:300px;
+    height:30px;
+    text-align: center;
+	transform-origin: left bottom;
+	position: absolute;
+	
+	animation-name: rotasjon;
+	animation-duration: 5s;
+	animation-timing-function: ease;
+	animation-direction: alternate;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+@keyframes rotasjon{
+	from {
+		transform: rotate(0deg);
+	}
+	
+	to {
+		transform: rotate(45deg);
+	}
+}
+
+
+	animation-name: rotasjon;
+	animation-duration: 2s;
+
+
+
+	position: absolute;
+	transform-origin: left bottom;
+
+	animation-direction:alternate;
+	animation-iteration-count: 3;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease;
+
+div:hover{
+	animation-play-state: running;
+}
+
+
+*/

@@ -1,0 +1,55 @@
+div {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    }
+p {
+    width:400px;
+    height:30px;
+    background-color: LimeGreen;
+	text-align: center;
+    transform: rotate(10deg);
+    transform-origin: left bottom ; 
+	transition: transform 2s, background-color 8s;
+	
+}
+
+img {
+    width: 400px;
+}
+
+p:hover{
+    transform: rotate(45deg);
+    /*transform: rotate(45deg) translate(100px,100px) scale(2);*/
+	background-color: red;
+}
+
+img:hover{
+    /*width:500px;*/
+    transform: scale(1.5);
+    transition: 2s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+*/
+
+/*    transform-origin: left bottom;    */
+/*    transition: transform 2s;         */

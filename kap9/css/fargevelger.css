@@ -1,0 +1,9 @@
+body{
+    transition: 2s;
+}
+
+input {
+	width: 200px;
+	height: 30px;
+}
+

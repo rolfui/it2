@@ -1,0 +1,32 @@
+body {
+  background-color: blue;
+}
+
+#container
+{
+  width: 747px;
+  height: 410px;
+  background-image: url("bilder/bgr.png");
+  position: relative;
+}
+#bil
+{
+  position: absolute;
+  background-image: url("bilder/bil.png");
+  width: 606px;
+  height: 193px;
+}
+#bakhjul
+{
+  position: absolute;
+  background-image: url("bilder/bakhjul.png");
+  width: 58px;
+  height: 58px;
+}
+#forhjul
+{
+  position: absolute;
+  background-image: url("bilder/forhjul.png");
+  width: 58px;
+  height: 58px;
+}

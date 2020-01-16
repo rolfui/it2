@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="UTF-8">
+        <title>Rotere et p-element</title>
+        <link id="myCss" rel="stylesheet" type="text/css" href="css/styleTest.css">
+    </head>
+    <body>
+        <p>Er jeg rotert?</p>
+        <div id="container">
+            <div class="content">Dette er avsnitt 1</div>
+            <div class="content">Dette er avsnitt 2</div>
+            <div class="content">Dette er avsnitt 3</div>
+            <div class="content">Dette er avsnitt 4</div>
+            <div class="content">Dette er avsnitt 5</div>
+            <div class="content">Dette er avsnitt 6</div>
+        </div>
+        <button id="btnChangeStyle">Change style ...</button>
+        <script>
+            var first = true;
+            var btnChangeStyle = document.getElementById("btnChangeStyle");
+            btnChangeStyle.onclick=function(){
+                if (first) {
+                    document.getElementById("myCss").setAttribute("href", "css/styleTest2.css");                
+                } else {
+                    document.getElementById("myCss").setAttribute("href", "css/styleTest.css");                
+                }
+                first = !first;
+            };
+        </script>
+        
+    </body>
+</html>

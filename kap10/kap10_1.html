@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Spill 1</title>
+	<link rel="stylesheet" href="css/styles1.css">
+</head>
+
+<body>
+
+	<span id="visPoeng">0 poeng</span>
+    <img id="mus" src="bilder/mus.png">
+	<script>
+		var visPoeng = document.getElementById("visPoeng");
+		var mus = document.getElementById("mus");
+		var poeng = 0;
+
+		function flyttMeg() {
+            var xpos = Math.floor(Math.random() * (window.innerWidth - 500));
+			var ypos = Math.floor(Math.random() * (window.innerHeight -500));
+			mus.style.left = xpos + "px";
+			mus.style.top = ypos + "px";
+			poeng += 10;
+			visPoeng.innerHTML = poeng + " poeng";
+            
+		}
+        mus.onclick = flyttMeg;
+	</script>
+</body>
+</html>

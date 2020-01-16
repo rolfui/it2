@@ -1,0 +1,73 @@
+html *{
+    transition: 4s;
+}
+
+body {
+    background-color: black;
+    text-align: center;
+}
+
+#container{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;    
+    justify-content: space-around;
+    width: 80%;
+    transition: 5s;    
+}
+
+div .content{
+    background-color: red;
+    padding: 10px;
+    width: 28%;
+    margin: 5px;
+}
+
+
+div :hover {
+    background-color: lavender;
+    transition: 2s;
+    transition-timing-function:step-start;
+}
+
+p {
+    margin: auto;
+    width:300px;
+    height:30px;
+    background-color: LimeGreen;
+	text-align: center;
+	transition: transform 2s, background-color 8s;
+	transform-origin: left bottom;
+}
+
+p:active{
+    transform: rotate(70deg) scale(0.5);
+	background-color: red;
+}
+
+button {
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+*/
+
+/*    transform-origin: left bottom;    */
+/*    transition: transform 2s;         */

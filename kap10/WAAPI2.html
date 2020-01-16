@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>WAAPI</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <h1>WAAPI</h1>
+    </head>
+    <body>
+      <div id="container">
+        <div id="bil">
+          <div id="bakhjul"></div>
+          <div id="forhjul"></div>
+        </div>
+      </div>
+      <button id="start">Start animasjonen</button>
+      <button id="retning">Skift retning</button>
+      <input type="range" min="0" max="5" value="1" id="fart">
+      <script>
+        var container=document.getElementById("container");
+        var bil=document.getElementById("bil");
+        var bakhjul=document.getElementById("bakhjul");
+        var forhjul=document.getElementById("forhjul");
+        var start=document.getElementById("start");
+        var retning=document.getElementById("retning");
+        var fart=document.getElementById("fart");
+
+        var flyttbil=bil.animate
+        (
+          [{left:"-600px"},{left:"800px"}],
+          {
+            duration: 10000,
+            iteratins: Infinity
+          }
+        );
+        var snurrhjul1=bakhjul.animate
+        (
+          [{transform: rotate("0deg")},{transform: rotate("360deg")}]
+          {
+            duration: 10000,
+            iterations: Infinity
+          }
+        );
+        var snurrhjul2=forhjul.animate
+        (
+          [{transform: rotate("0deg")},{transform: rotate("360deg")}]
+          {
+            duration: 10000,
+            iterations: Infinity
+          }
+        );
+        start.onclick=function()
+        {
+          flyttbil.play();
+          snurrhjul1.play();
+          snurrhjul2.play();
+        }
+        fart.onchange=function()
+        {
+          flyttbil.playbackRate=fart.value;
+          snurrhjul1.playbackRate=fart.value;
+          snurrhjul2.playbackRate=fart.value;
+        }
+        retning.onclick=function()
+        {
+          flyttbil.reverse();
+        }
+      </script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Spill 1</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<canvas id="myCanvas" width="200" height="200"></canvas>
+
+<script>
+
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+var img = new Image();
+img.src = "bilder/mus.png";
+setTimeout(function(){ctx.drawImage(img, 100, 100)},500);
+
+</script>
+	
+
+	</body>
+</html>
