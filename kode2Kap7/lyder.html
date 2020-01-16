@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Lyder</title>
+</head>
+<body>
+    <h1>Lyder</h1>
+
+    <script>
+
+var ac = new AudioContext();
+var frequencies = [300, 400, 500, 600];
+let oscillator = ac.createOscillator();
+
+oscillator.connect(ac.destination);
+oscillator.start(0);
+
+var i=0;
+/*function play() {
+ 
+    oscillator.frequency.value = frequencies[i%4];
+    i++;
+}
+*/
+//setInterval(play,2000);
+var interval=1000;
+setInterval(() => {
+    oscillator.frequency.value = frequencies[i%4];
+    i++;
+}, interval);
+
+
+</script>
+</body>
+</html>
