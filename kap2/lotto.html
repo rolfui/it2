@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>lotto</title>
+    <link rel="stylesheet" href="css/styles.css"> 
+</head>
+<body>
+    <script>
+        var myLine = [];
+        var drawLine = [];
+        
+        let index = 0;
+        //create my Lotto line
+        while (myLine.length < 7) {
+            let number = Math.floor(Math.random()*34) + 1;
+            let blInLine = false;
+            for (let i = 0; i < myLine.length; i++){
+                if (number == myLine[i]) {
+                    blInLine = true;
+                    break;
+                }
+            }
+            if (!blInLine){
+                myLine[index]=number;
+                index++;
+            }
+        }
+        
+        myLine.sort(function(a, b){return a - b});
+        //Draw lines until a winning line
+        
+        
+        
+        document.write(myLine);
+    </script> 
+    
+</body>
+</html>

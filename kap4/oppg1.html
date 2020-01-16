@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Oppgave 1</title>
+    <link rel="stylesheet" href="css/styles.css">  
+</head>
+<body>
+    <h1>Oppgave 1</h1>    
+    <div id="div1"></div>    
+<script>
+    var div1 = document.getElementById("div1");
+    var ord=["Hei", "på", "deg"];
+    var i = 0;
+    var strResult = "";
+    while(i < ord.length){
+        strResult += ord[i] + " ";
+        i++;
+    }
+    div1.innerHTML = strResult;
+    
+</script>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Anonyme funksjoner</title>
+    <link rel="stylesheet" href="css/styles.css">
+    
+</head>
+<body>
+    <h1>Automatisk funksjon</h1>   
+    
+    <p id="myPar"></p>
+    
+    <script>
+        //Automatisk funksjon. kap 5.4 i boka
+        (function (){
+            var myParagraph=document.getElementById("myPar");
+            var forNavn=prompt("Sett inn fornavn");
+            var etterNavn=prompt("Sett inn etternavn");
+            myParagraph.innerHTML="<p> Hei " + forNavn + " " + etterNavn + "</p>";
+        })();
+        
+    </script>   
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    <p id="fibonacci"></p>
+    
+<script>
+    
+    var tall1=0;
+    var tall2=1;
+    var tall3=1;
+    var fib=document.getElementById("fibonacci");
+    var strResult="";
+    
+    while (tall3<10000){
+        strResult+="<p>" + tall3 + "</p>";
+        tall3=tall1+tall2;
+        tall1=tall2
+        tall2=tall3;
+    }
+    
+    fib.innerHTML=strResult;
+    
+</script>
+-->

@@ -1,0 +1,16 @@
+{
+  "pictures" : {
+    "pic1" : {
+      "FileName" : "bilder/katt.jpg",
+      "Title" : "En katt"
+    },
+    "pic2" : {
+      "FileName" : "bilder/fugl.jpg",
+      "Title" : "En fugl i hånden ..."
+    },
+    "pic3" : {
+      "FileName" : "bilder/bille.jpg",
+      "Title" : "Billig"
+    }
+  }
+}

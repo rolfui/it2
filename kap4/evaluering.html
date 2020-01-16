@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <script>
+        var sum=0;
+        var runs=10;
+        var intTryCount=0;
+        var intSixCount=0;
+        var intDiceCount=0;
+        var boolYatzy = false;
+             
+        for(var i=0; i<runs; i++){
+            while(!boolYatzy){
+                intDiceCount=0;
+                intTryCount++;
+                intSixCount=0;
+                while ( (Math.floor(Math.random()*6)+1 == 6) && (intDiceCount<=5) ){
+                    intSixCount++;
+                    intDiceCount++;
+                }
+                if (intSixCount==5){
+                    boolYatzy=true;
+                    document.write("Gratulerer du har fått yatzy i seksere på " + intTryCount + " kast!");
+                    sum+=intTryCount;
+                }
+            }
+            boolYatzy=false;
+        }
+        document.write("Gjennomsnittlig antall kast: " + String(sum/runs);
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Switch</title>
+    <link rel="stylesheet" href="css/styles.css">  
+</head>
+<body>
+    <h1>Switch, case</h1>    
+    <div id="div1"></div>
+    <script>
+        var strOutput = "";
+        var div1 = document.getElementById("div1");
+        var tall=0; //datatype number
+        tall=prompt("Skriv inn et tall mellom 1 og 5");  //string
+        tall=Number(tall); //tall
+        
+        switch(tall) {
+            case 1:
+                strOutput = "x";
+                break;
+            case 2:
+                strOutput = "xx";
+                break;
+            case 3:
+                strOutput = "xxx";
+                break;
+            case 4:
+                strOutput = "xxxx";
+                break;
+            case 5:
+                strOutput = "xxxxx";
+                break;
+            default:
+                strOutput = "Tallet er ikke mellom 1 og 5 !";
+        }
+        
+        div1.innerHTML = strOutput;
+    
+    </script>
+</body>
+</html>  
+    
+<!--
+    /*
+    var navn="Donald";
+    
+    if (navn==="Birger"){
+        document.write("Navnet er Birger");
+    
+    } else if(navn==="Bjarne") {
+        document.write("Navnet er Bjarne");
+    }
+    else {
+        document.write("Navnet er ikke i listen");
+    }
+    */
+/*    
+        var navn="Donald";
+        
+        switch(navn)  {
+            case "Anton":
+                document.write("<p>Navnet er Anton</p>");
+                break;
+            case "Birger":
+                document.write("<p>Navnet er Birger</p>");
+                break;
+            case "donald":
+                document.write("<p>Navnet er Donald</p>");
+                break;
+            default:
+                document.write("<p>Navnet finnes ikke i listen !</p>");
+        }
+        
+  */      
+-->

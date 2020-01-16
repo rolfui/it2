@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+</head>
+    
+<body>
+
+<h2>SVG-Scaled Vector Graphics</h2>
+
+    
+<svg width="800" height="300" id="chart">
+    <defs>
+        <marker id="sirkel" markerWidth="6" markerHeight="6" refX="3" refY="3">
+        <circle cx="3" cy="3" r="2" fill="Steelblue"></circle></marker>
+    </defs>
+</svg>
+    
+<script>
+    var chart = document.getElementById("chart");
+    
+    var data = [
+        {mnd: "Januar", verdi: 100},
+        {mnd: "Februar", verdi: 20},
+        {mnd: "Mars", verdi: 70},
+        {mnd: "April", verdi: 150},
+        {mnd: "Mai", verdi: 140},
+        {mnd: "Juni", verdi: 20},
+        {mnd: "Juli", verdi: 40}
+    ];
+    
+    for(var i = 0 ; i < 4 ; i++) { //Tegner opp horisontale linjer
+        chart.innerHTML += `<line stroke="LightGray" x1="50" y1="${50 + i * 50}"
+        x2="550" y2="${50 + i * 50}"></line>`;
+    }
+    for(var i = 0 ; i < 11 ; i++) { //Tegner opp vertikale linjer
+        chart.innerHTML +=`<line stroke="LightGray" x1="${50 + i * 50}" y1="50"
+        x2="${50 + i * 50}" y2="200"></line>`;
+    }
+    data.forEach(function(element, indeks) { //Tegner opp tekster    
+        chart.innerHTML += `<text font-family="arial" text-anchor="middle" fill="Dark-
+        Gray" font-size="12" x="${50 + indeks * 50}" y="220">${element.mnd}</text>`;
+    });
+    var punkter = ""; //Tegner opp linjen
+    data.forEach(function(element, indeks) {
+        punkter += `${50 + indeks * 50},${200 - element.verdi} `;
+    });
+    chart.innerHTML += `<polyline points = "${punkter}" marker-mid="url(#sirkel)" stroke="SteelBlue" stroke-width="2" fill="none"></polyline>`;
+</script>    
+    
+</body>
+</html>

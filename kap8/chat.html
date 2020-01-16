@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SuperChat</title>
+</head>
+<body>
+
+    <!--Skjema for å skrive meldinger som skal sendes til Firebase-->
+    <form id="skjema">
+        <input type="text" id="inpAvsender" required placeholder="Hvem er du?">
+        <input type="text" id="inpMening" required placeholder="Hva sier du?">
+        <button type="submit" class="button">OK</button>
+    </form>
+    <!--Et article-element som vi skriver ut innholdet i databasen til-->
+    <article id="txtMeldinger"></article>
+
+    <!--Lenke til Firebase-kodebibliotek-->
+     <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDUEJb2D8IWr0I6S80yhOedacns3SPWEoA",
+        authDomain: "mytest-61c3e.firebaseapp.com",
+        databaseURL: "https://mytest-61c3e.firebaseio.com",
+        projectId: "mytest-61c3e",
+        storageBucket: "mytest-61c3e.appspot.com",
+        messagingSenderId: "407384860177"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+
+    <!--Javascript for å registrere meldinger i en database (Firebase) og skrive ut innholdet i databasen-->
+    <script>
+        //Referanser til databasen, tekstfeltene og artikkel-elementet vi skriver ut meldingene i databasen til
+        let database = firebase.database();
+        let meldinger = database.ref("meldinger");
+        let skjema = document.getElementById("skjema");
+        let inpAvsender = document.getElementById("inpAvsender");
+        let inpMening = document.getElementById("inpMening");
+        let txtMeldinger = document.getElementById("txtMeldinger");
+
+        //Tar et snapshot fra databasen og skriver ut nye meldinger til article-elementet
+        function visMelding(snapshot) {
+            var melding = snapshot.val();
+            txtMeldinger.innerHTML+= `<p>${melding.avsender} sier ${melding.tekst}</p>`;
+
+        }
+
+        //Lager et JSON-objekt av dataene fra input-feltene og sender JSON-objektet inn i databasen
+        function regNyMelding(evt){
+            evt.preventDefault();
+            var nyMelding = {
+                avsender: inpAvsender.value,
+                tekst: inpMening.value
+            };
+            meldinger.push(nyMelding);
+            inpMening.value="";
+        }
+
+        //Når databasen mottar et nytt JSON-objekt kalles visMelding-funksjonen
+        meldinger.on("child_added", visMelding);
+
+        //Når skjemaet sendes inn kalles regNyMelding-funksjonen
+        skjema.onsubmit = regNyMelding;
+
+    </script>
+
+</body>
+</html>

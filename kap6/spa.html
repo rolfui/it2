@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Single Page Application</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles_spa.css">  
+</head>
+
+<body>
+    <div id="container">
+        <form id="nameForm">
+            <div></div>
+            <label for="forNavn">Fornavn: </label>
+            <input class="inp" type="text" id="forNavn" placeholder="Fornavn..." maxlength="20" required autofocus tabindex="1">
+            <div></div>
+
+            <div></div>
+            <label for="etterNavn">Etternavn: </label>
+            <input class="inp" type="text" id="etterNavn" placeholder="Etternavn..." maxlength="20" required tabindex="2">            
+            <div></div>
+            
+            <div></div>
+            <label for="tlf">Tlf: </label>
+            <input class="inp" type="number" id="tlf" name="tlf" placeholder="xxxxxxxx" min="10000000" max="99999999" required tabindex="3">
+            <div></div>
+
+            <div></div>
+            <label for="yesNo">Send name?</label>
+            <div>
+                <input type="radio" name="yesNo" value="Yes" checked tabindex="4">Yes
+                <input type="radio" name="yesNo" value="No" tabindex="5">No
+            </div>
+            <div></div>
+            
+            <div></div>
+            <div></div>
+            <input type="submit" value="Send" tabindex="6">
+            <div></div>
+        </form>
+    </div>
+
+    <div id="outDiv"></div>
+    
+    <script>
+        var outDiv=document.getElementById("outDiv");
+        var nameForm=document.getElementById("nameForm");
+        var forNavn=document.getElementById("forNavn");
+        var etterNavn=document.getElementById("etterNavn");
+        var tlfNummer=document.getElementById("tlf");
+        var yesNo=nameForm["yesNo"];
+        
+        forNavn.oninvalid=function(){
+            forNavn.setCustomValidity("Har du ikke fornavn?");
+        }
+        forNavn.oninput=function(){
+            forNavn.setCustomValidity("");
+        }
+                
+        nameForm.oninput=function(){
+            outDiv.innerHTML="";
+        }
+        
+        nameForm.onsubmit=function(evt){
+            evt.preventDefault();       //SPA Single Page Application
+            
+            if(yesNo.value=="Yes"){
+                outDiv.innerHTML=forNavn.value + " " + etterNavn.value + ": " + tlfNummer.value;
+            } else {
+                outDiv.innerHTML="NEI";
+            }
+        }
+
+    </script>
+</body>
+</html>

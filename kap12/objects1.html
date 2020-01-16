@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Objects</title>
+    <link rel="stylesheet" href="css/styles1.css">
+</head>
+
+<body>
+   
+   <h2>Objects and classes</h2>
+
+    <script>
+		
+		class rectangle{	//superklasse, parent
+			constructor(width, height){
+				width = Number(width);
+				height = Number(height);
+				if(width<=0){width = -width};
+				if(height<=0){height = -height};
+			
+				this.width = width;
+				this.height = height;
+			}
+			
+			get area(){
+				return this.width * this.height;
+			}
+			get perimeter(){
+				return 2* (this.width + this.height);
+			}
+			
+			info(){
+				document.write("<p>Jeg er et rektangel! </p>");
+			}
+			
+		}
+		
+		class square extends rectangle{			//subklasse, child
+			constructor(sides){
+				super(sides,sides);
+			}
+			get perimeter(){
+				return 4* this.width;
+			}
+			
+			get sides(){
+				return this.width;
+			}
+			
+			set sides(sides){
+				this.width = sides;
+				this.height = sides;
+			}
+
+			info(){
+				document.write("<p>Jeg er et kvadrat! </p>");
+			}
+		}
+		
+		var myRect = new rectangle(300, 200);
+		var mySquare = new square(50);
+		mySquare.sides = 50;
+		
+		
+		document.write("Bredde: " + myRect.width + "<br>");
+		document.write("Høyde: " + myRect.height + "<br>");
+		document.write("Areal: " + myRect.area + "<br>");
+		document.write("Omkrets: " + myRect.perimeter + "<br>");
+		myRect.info();
+		
+		document.write("<br>");
+		
+		document.write("Sider: " + mySquare.sides + "<br>");
+		document.write("Areal: " + mySquare.area + "<br>");
+		document.write("Omkrets: " + mySquare.perimeter + "<br>");
+		mySquare.info();	
+	</script>
+	
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+           
+           
+           
+           
+           
+           
+           
+            
+    
+<!--
+   
+           class rectangle{
+            constructor(width,height){
+                width=Number(width);
+                if (width<0) {width=-width;}
+                this.width = width;
+                this.height = height;
+            }
+            showInfo(){
+                document.write("Jeg er et rektangel<br>");
+            }
+            
+            get area(){
+                return this.width*this.height;
+            }
+            get perimeter(){    //omkrets
+                return 2*(this.width+this.height);
+            }
+        }
+        
+        class square extends rectangle{
+            constructor(sides){
+                super(sides,sides);
+            }
+            showInfo(){
+                document.write("Jeg er et kvadrat<br>");
+            }
+            get perimeter(){    //omkrets
+                return 4*this.width;
+            }
+
+            set sides(sides){
+                this.width = sides;
+                this.height = sides;
+            }
+            
+        }
+        
+        document.write();
+        var myRect = new rectangle(100,30);
+        var mySquare = new square(50);
+        
+        myRect.width = 200;
+        document.write("Bredde: " + myRect.width + "<br>");
+        document.write("Høyde: " + myRect.height + "<br>");
+        document.write("Areal: " + myRect.area + "<br>");
+        document.write("Omkrets: " + myRect.perimeter + "<br>");
+        myRect.showInfo();
+
+        document.write("<br>");
+        
+        mySquare.sides=500;
+        document.write("Bredde: " + mySquare.width + "<br>");
+        document.write("Høyde: " + mySquare.height + "<br>");
+        document.write("Areal: " + mySquare.area + "<br>");
+        document.write("Omkrets: " + mySquare.perimeter + "<br>");
+        mySquare.showInfo();
+        
+        
+        
+        
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    class rectangle {
+        constructor(width,height){
+            this.width = width;
+            this.height = height;
+        }
+        
+        get area(){
+            return this.width*this.height;
+        }
+        
+        get perimeter(){    //omkrets
+            let peri = 2 * (this.width+this.height);
+            return peri;
+        }
+        
+        writeInfo(){
+            document.write("<p> Jeg er et rektangel </p>");
+        }
+    }    
+        
+    
+    class square extends rectangle{
+        constructor(sides){
+            super(sides,sides);
+        }
+        writeInfo(){
+            document.write("<p> Jeg er et kvadrat </p>");
+        }
+        set sides(sides){
+            this.width = sides;
+            this.height = sides;
+        }
+        
+        get perimeter(){
+            return 4*this.width;
+        }
+    }
+            
+    var myRect = new rectangle(100,30);
+    var mySquare = new square();
+        
+    myRect.width = 30;
+    mySquare.sides = 20;
+        
+    document.write("Bredde: " + myRect.width + "<br>");    
+    document.write("Areal: " + myRect.area + "<br>");
+    document.write("Omkrets: " + myRect.perimeter + "<br>");
+    myRect.writeInfo();
+        
+    document.write("Bredde: " + mySquare.width + "<br>");    
+    document.write("Areal: " + mySquare.area + "<br>");
+    document.write("Omkrets: " + mySquare.perimeter + "<br>");
+    mySquare.writeInfo();
+
+-->
+    
+</body>
+
+</html>

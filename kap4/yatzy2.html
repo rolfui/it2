@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Yatzy 2</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <script>
+        let antKast=0, antSeks=0, antTerninger=5 ;
+        
+        while(antSeks < antTerninger ){  //så lenge vi ikke har yatzy skal vi fortsette å kaste terningene
+            antKast++;      //inkrementerer antall kast brukt så langt
+            antSeks = 0;    // setter antSeks til null for nytt kast
+            let blKastFerdig = false;   //variabel for å avgjøre når kastet er ferdig.
+            while(!blKastFerdig && antSeks < antTerninger){
+                Math.floor(Math.random()*6)==5 ?  antSeks++ : blKastFerdig = true;
+            }
+        }
+        document.write("Du har yatzy :) og brukte " + antKast + " forsøk! Antall seksere: " + antSeks);
+    </script>
+</body>
+</html>

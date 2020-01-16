@@ -1,0 +1,66 @@
+<!DOCTYPE html> 
+<html lang="no"> 
+<head> 
+<meta charset="UTF-8"> 
+
+<title>Tabel</title> 
+
+<link rel="stylesheet" type="text/css" href="../css/tabell.css"> 
+
+</head>
+
+<body>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+// Your web app's Firebase configuration
+var firebaseConfig = {
+apiKey: "AIzaSyCBlJSemHksgXairBT88_D1szZx0xSnik4",
+authDomain: "tabell-d3488.firebaseapp.com",
+databaseURL: "https://tabell-d3488.firebaseio.com",
+projectId: "tabell-d3488",
+storageBucket: "tabell-d3488.appspot.com",
+messagingSenderId: "209127565065",
+appId: "1:209127565065:web:69806e70366fadf4"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+</script>
+
+<!---<div>
+<article><img src="../bilder/elephant-road.jpg">Elefant</article>
+<article><img src="../bilder/fyrverkeri.jpg">Fyrverkeri</article>
+<article><img src="../bilder/natur.jpg">Natur</article>
+</div>
+-->
+
+<div id="divBilde"></div>
+
+<script> 
+
+let database = firebase.database(); 
+
+let bilder = database.ref().child("bilder"); 
+
+let divBilde = document.getElementById("divBilde"); 
+
+
+    bilder.on("child_added", function(snapshot) {
+        let picInfo = snapshot.val();
+        divImage.innerHTML += `<figure><figcaption>` + picInfo.Title + `</figcaption> <img src="` + picInfo.FileName + `"></img></figure>`;
+
+       /* divImage.innerHTML += "<figure><figcaption></figcaption><img src=\"" + picInfo.FileName + "\"></img></figure>";
+*/
+    
+        
+    });
+</script> 
+</body>
+
+</html>

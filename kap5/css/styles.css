@@ -1,0 +1,19 @@
+body {
+    background-color: white;
+}
+p {
+    color:black;
+}
+#paragraph1 {
+    color:red;
+}
+canvas {
+    border: 1px solid;
+    //background-color: red;
+}
+
+#mDiv{
+    width: 200px;
+    height: 200px;
+    background-color: lightgreen;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <script>
+        var terning1 = 0;
+        var terning2 = 0;
+        var terning3 = 0;
+        var terning4 = 0;
+        var terning5 = 0;
+
+        var sum = 0;
+        var runs = 10;
+        var intTryCount = 0;
+             
+        for(var i=0; i<runs; i++){
+            terning1 = 0;
+            terning2 = 0;
+            terning3 = 0;
+            terning4 = 0;
+            terning5 = 0;            
+            while(!(terning1==6 && terning2==6 && terning3==6 && terning4 == 6 && terning5==6 )){
+                intTryCount++;
+                terning1=Math.floor(Math.random()*6)+1;
+                terning2=Math.floor(Math.random()*6)+1;
+                terning3=Math.floor(Math.random()*6)+1;
+                terning4=Math.floor(Math.random()*6)+1;
+                terning5=Math.floor(Math.random()*6)+1;    
+            }
+            document.write("trycount: " + String(intTryCount) + " <br>");
+            sum+=intTryCount;
+            intTryCount=0;
+        }
+        document.write("sum: " + String(sum) + " <br>");
+        document.write("runs: " + String(runs) + " <br>");
+        document.write("Gjennomsnittlig antall kast: " + String(sum/runs) + " <br>");
+    </script>
+</body>
+</html>

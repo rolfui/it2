@@ -1,0 +1,43 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Title</title>
+</head>
+<body>
+<h2>Katt</h2>
+<script>
+class animal{
+constructor(legs,color,birthYear){
+this.legs=legs;
+this.color=color;
+this.birthYear=birthYear;
+birthYear=Number(birthYear);
+
+
+}
+showInfo(){
+document.write("Jeg er et dyr");
+}
+
+get age(){
+return 2018-this.birthYear;
+}
+get age2027(){
+return 2027-(this.birthYear);
+}
+get sayHello(){
+return "Hei :-)";
+}
+}
+
+var katt = new animal(4,"hvit",2013);
+document.write("bein: " + katt.legs + "<br> Farge: " + katt.color + "<br>Født: " + katt.birthYear + "<br> Alder: " + katt.age + "<br> Alder i 2027: " + katt.age2027 + "<br><br>" + katt.sayHello);
+
+var hund = new animal(4,"brun",2015);
+document.write("<br><h2>Hund</h2>bein: " + hund.legs + "<br> Farge: " + hund.color + "<br>Født: " + hund.birthYear + "<br> Alder: " + hund.age + "<br> Alder i 2027: " + hund.age2027 + "<br><br>" + katt.sayHello);
+</script>
+</body>
+</html>

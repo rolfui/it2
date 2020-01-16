@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>127</title>
+    <link rel="stylesheet" href="css/styles.css">  
+</head>
+<body>
+    <h1>Bilder 2</h1>
+    <div>
+        <!--https://www.w3schools.com/tags/att_data-.asp-->
+        <button id="buttonKatt" data-bilde="images/katt.jpg">Vis meg en katt</button>
+        <button id="buttonHund" data-bilde="images/hund.jpg">Vis meg en hund</button>
+    </div>
+    <img id="bilde">
+    
+    <script>
+        var btnKatt=document.getElementById("buttonKatt");
+        var btnHund=document.getElementById("buttonHund");
+        var bilde=document.getElementById("bilde");
+        
+        function visBilde(evt){
+            var knapp=evt.target;
+            //var bildefil=knapp.getAttribute("data-bilde");
+            //bilde.src=bildefil;
+            bilde.src=knapp.getAttribute("data-bilde");;
+        }
+        
+        btnKatt.onclick=visBilde;
+        btnHund.onclick=visBilde;
+    </script> 
+
+</body>
+</html>

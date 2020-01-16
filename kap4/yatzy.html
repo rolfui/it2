@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Yatzy</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <script>
+        var terninger=[];   //array med terninger
+        var yatzy = false;  //Boolean for å stoppe løkka når vi har fått yatzy
+        var antKast = 0;    //Teller for å ta vare på antall kast
+        var antTerninger = 5;
+        
+        while(!yatzy){              //så lenge vi ikke har yatzy skal vi fortsette å kaste terningene
+            antKast++;              //inkrementerer antall kast brukt så langt
+            var antSeks = 0;       //Vi har ingen seksere ennå
+            for(let i = 0; i < antTerninger ; i++) {  //kaste antall terninger
+                terninger[i] = Math.floor(Math.random()*6) +1;
+            }
+            
+            for(let i = 0; i < antTerninger; i++) {  //sjekke om vi har yatzy.
+                if (terninger[i] == 6) {    //hvis terning nr i er 6
+                    antSeks ++;            //så øker vi seksertelleren med en
+                }
+            }
+            if (antSeks == antTerninger) {  //Hvis alle terningene er seks
+                yatzy = true;               //så har vi yatzy (fem like)
+            }
+        }
+        
+        document.write("Du har yatzy :) og brukte " + antKast + " forsøk! Antall seksere: " + antSeks);
+    </script>
+</body>
+</html>

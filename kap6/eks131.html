@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+    <title>131</title>
+</head>
+<html>
+    <body>
+        
+        <datalist id="bilmerker">
+            <option value="Audi">
+            <option value="BMW">
+            <option value="Ford">
+            <option value="Skoda">
+            <option value="Volvo">
+        </datalist>
+        
+        <p>
+            <label for="inpMerke">Velg bilmerke:</label>
+            <input type="text" id="inpMerke" list="bilmerker" placeholder="Velg bilmerke">
+            <span id="spanBilmerke"></span>
+        </p>
+        <p>
+            <label for="inpDato">Dato:</label>
+            <input id="inpDato" type="date">
+            <span id="spanDato"></span>
+        </p>
+        <p>
+            <label for="inpText">Skriv inn tekst her:</label>
+            <input id="inpText" type="text">
+            <span id="spanText"></span>
+        </p>
+        <p>
+            <label for="inpColor">Velg bakgrunnsfarge:</label>
+            <input id="inpColor" type="color">
+            <span id="spanColor"></span>
+        </p>
+    </body>
+    <script>
+        var inpMerke=document.getElementById("inpMerke");
+        var inpDato=document.getElementById("inpDato");
+        var inpText=document.getElementById("inpText");
+        var inpColor=document.getElementById("inpColor");
+        var spanBilmerke=document.getElementById("spanBilmerke");
+        var spanText=document.getElementById("spanText");
+        var spanDato=document.getElementById("spanDato");
+        var spanColor=document.getElementById("spanColor");
+
+        
+        inpMerke.oninput=function(){
+            spanBilmerke.innerHTML=inpMerke.value;
+        }
+
+        inpDato.onchange=function(){
+            spanDato.innerHTML=inpDato.value;
+        }
+        
+        inpText.oninput=function(){
+            spanText.innerHTML=inpText.value;
+        }
+
+        inpColor.oninput=function(){
+            spanColor.innerHTML=inpColor.value;
+            document.body.style.backgroundColor=inpColor.value;
+        }
+        
+    </script>
+</html>

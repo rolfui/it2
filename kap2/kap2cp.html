@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>getElementById</title>
+    <link rel="stylesheet" href="css/styles.css">  
+</head>
+<body>
+    
+    <p id="p1">Dette er teksten i avsnitt 1</p>
+    <p>Dette er teksten i avsnitt 2</p>
+    <p id="p3">Dette er teksten i avsnitt 3</p>
+    <p id="p4">Dette er teksten i avsnitt 4</p>
+    
+    <script>
+        console.log(document.body.innerHTML);
+        document.getElementById("p1").innerHTML="Hei på deg!";
+        document.getElementById("p1").style="color:yellow";
+        document.getElementById("p3").innerHTML=window.innerWidth;
+        document.getElementById("p4").innerHTML=screen.width;
+    </script> 
+    
+</body>
+</html>

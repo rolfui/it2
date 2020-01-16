@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Anonyme funksjoner</title>
+</head>
+    <body>
+        <h1>Telle elever</h1>
+    
+        <button id="btnCount">Elever +</button>
+        <div id="elevCount"></div>
+        <script>
+            var btnCount=document.getElementById("btnCount");
+            var elevCount=document.getElementById("elevCount");
+            var elever= 0;
+            
+            btnCount.onclick=function (){
+                elever++;
+                if (elever<3) {
+                    elevCount.innerHTML="Antall elever: " + elever;
+                } else {
+                    elevCount.innerHTML="Nå er det 300 elever. FULLT !!!!";
+                    btnCount.parentElement.removeChild(btnCount);
+                    //document.body.removeChild(btnCount);
+                    //btnCount.disabled=true;
+                }
+            }
+         
+            
+            
+        </script>
+    </body>
+</html>

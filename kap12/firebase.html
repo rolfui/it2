@@ -1,0 +1,103 @@
+	<!DOCTYPE html>
+	<html lang="no">
+		<body>
+			<h1>Min fantastiske chat</h1>
+			<form id="regMelding">
+				<input id="inpNavn" type="text" required placeholder="Navn">
+				<input id="inpTekst" type="text" required placeholder="Melding">
+				<button type="submit">Legg inn melding</button>
+			</form>
+
+			<section id="visMeldinger"></section>
+			<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+			<script>
+/*				  // Initialize Firebase
+				var config = {
+					apiKey: "AIzaSyAC5a2D-wS4kGKQQ6akj4IY4a2suUTYfdU",
+					authDomain: "ruiit2-8db39.firebaseapp.com",
+					databaseURL: "https://ruiit2-8db39.firebaseio.com",
+					projectId: "ruiit2-8db39",
+					storageBucket: "ruiit2-8db39.appspot.com",
+					messagingSenderId: "509946994252"
+				};
+				firebase.initializeApp(config);
+*/
+				
+    var config = {
+        apiKey: "AIzaSyAxOMLqkfxcu0PSb__FTDhHeP-jgBiupjE",
+        authDomain: "gpacal-34e08.firebaseapp.com",
+        databaseURL: "https://gpacal-34e08.firebaseio.com",
+        projectId: "gpacal-34e08",
+        storageBucket: "",
+        messagingSenderId: "298791908636"
+    };
+    firebase.initializeApp(config);
+			</script>
+    
+<!--
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDBuAADXAPYPsvOF2Xq7cruSGl_TNKBpGk",
+    authDomain: "test-bb036.firebaseapp.com",
+    databaseURL: "https://test-bb036.firebaseio.com",
+    projectId: "test-bb036",
+    storageBucket: "test-bb036.appspot.com",
+    messagingSenderId: "308772762881"
+  };
+  firebase.initializeApp(config);
+</script>
+-->            
+            
+			<script>
+/*firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // ...
+});
+  */          
+                
+				var meldinger = firebase.database().ref().child('meldinger');
+				var regMelding = document.getElementById("regMelding");
+				var inpNavn = document.getElementById("inpNavn");
+				var inpTekst = document.getElementById("inpTekst");
+                var myWatch;
+                var visMeldinger = document.getElementById("visMeldinger");
+                visMeldinger.innerHTML ="";
+				
+                regMelding.onsubmit = function(evt) {
+					console.log("heiffd");
+                    evt.preventDefault();
+					myWatch = meldinger.push( {
+						"navn": inpNavn.value,
+						"tekst": inpTekst.value
+					});
+                    console.log("hei");
+                    console.log(myWatch);
+				};
+				meldinger.on("child_added", function(snapshot) {
+					var melding = snapshot.val(); // Henter meldinger fra databasen
+					visMeldinger.innerHTML += `<div>${melding.navn} sier <i>${melding.tekst}</i></div>`;
+				});
+
+                meldinger.on("value", function(snapshot) {
+					var melding = snapshot.val(); // Henter meldinger fra databasen
+					visMeldinger.innerHTML += `<div>${melding.navn} sier <i>${melding.tekst}</i></div>`;
+					//visMeldinger.innerHTML += "HEI";
+				});
+                
+                
+                myWatch.on("child_changed", function(snapshot) {
+					var melding = snapshot.val(); // Henter meldinger fra databasen
+					visMeldinger.innerHTML += `<div>${melding.navn} sier <i>${melding.tekst}</i></div>`;
+					//visMeldinger.innerHTML += "HEI";
+				});			</script>
+		</body>       
+	</html>
+
+
+
+
+<!--	<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-database.js"></script> -->

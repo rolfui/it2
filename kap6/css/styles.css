@@ -1,0 +1,32 @@
+body {
+    background-color:white;
+}
+
+#sirkel {
+    width: 50px;
+    height: 50px;
+    margin: 20px auto;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 50%; /*gjør div-elementet rundt*/
+}
+
+a {
+    color: red;
+    text-decoration: none;
+}
+
+a:hover {
+    color:black;
+}
+
+h1{
+    padding: 20px;
+    border-style: solid;
+    border-width: 10px;
+    margin: 20px;
+}
+
+img {
+    width: 800px;
+}

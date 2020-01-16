@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <meta charset="utf-8">
+    <title>fireTest</title>
+    <link rel="stylesheet" href="css/styles.css">  
+</head>
+
+<body>
+    
+    <h2>fireBase Storage</h2>    
+    
+    <input type="file" id="inpFil"required>
+    <div id="info"></div>
+    
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDUEJb2D8IWr0I6S80yhOedacns3SPWEoA",
+        authDomain: "mytest-61c3e.firebaseapp.com",
+        databaseURL: "https://mytest-61c3e.firebaseio.com",
+        projectId: "mytest-61c3e",
+        storageBucket: "mytest-61c3e.appspot.com",
+        messagingSenderId: "407384860177"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <script>
+        var storage = firebase.storage();
+        var inpFil = document.getElementById("inpFil");
+        var info = document.getElementById("info");
+        
+        function lastOppBilde(){
+            var fil = inpFil.files[0];
+            var filNavn = fil.name;
+            var lagringsplass = storage.ref("bilder/" + filNavn);
+            lagringsplass.put(fil).then(function(){document.write("hei")});
+        }
+            //lagringsplass = storage.ref("bilder/debug.jpg");
+//            lagringsplass.getDownloadURL().then(function(url) {
+//  console.log(url)});
+            
+//          }
+        
+        inpFil.addEventListener("change", lastOppBilde);
+        //inpFil.onchange=lastOppBilde;
+        
+    </script>
+    
+</body>
+</html>

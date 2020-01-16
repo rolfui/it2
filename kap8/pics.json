@@ -1,0 +1,12 @@
+{"pictures":{
+    "pic1":{
+        "Title": "First picture",
+        "FileName": "first.jpg"
+    },
+    "pic2":{
+        "Title": "Second picture",
+        "FileName": "second.jpg"
+    }
+    
+    }
+}

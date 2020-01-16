@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>125</title>
+    <link rel="stylesheet" href="css/styles.css">  
+</head>
+<body>
+    <h1>Bilder</h1>
+    <div>
+        <button id="buttonKatt">Vis meg en katt</button>
+        <button id="buttonHund">Vis meg en hund</button>
+    </div>
+    <img id="bilde">
+    
+    <script>
+        var btnKatt=document.getElementById("buttonKatt");
+        var btnHund=document.getElementById("buttonHund");
+        var bilde=document.getElementById("bilde");
+        
+        function visBilde(evt){
+            var knapp=evt.target;
+            if(knapp.id==="buttonKatt"){
+                bilde.src="images/katt.jpg";
+            } else {
+                bilde.src="images/hund.jpg";
+            }    
+        }
+        
+        btnKatt.onclick=visBilde;
+        btnHund.onclick=visBilde;
+    </script> 
+
+</body>
+</html>

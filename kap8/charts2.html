@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <meta charset="utf-8">
+    <title>Charts 2</title>
+    <link rel="stylesheet" href="css/styles2.css">
+</head>
+
+<body>
+    <h2>Charts 2</h2>
+   
+    <div id="chart"><!-- Fylles med data fra array med temperaturer --></div>
+    <script>
+        var chart = document.getElementById("chart");
+        var temperaturer = [16, 16, 18, 21, 25, 28, 28, 33, 28,23,22,18];
+        
+        function finnMaks() {
+            var maks = -Infinity;
+            for(var temp of temperaturer) { //Traverserer temperaturene
+                if(temp > maks) {
+                    maks = temp;
+                }
+            }
+            return maks;
+        }
+        
+        function tegnStolper() { //Oppretter stolpene
+            var maks = finnMaks();
+            for(var temp of temperaturer) {
+                var prosent = (temp/maks) * 100;
+                //chart.innerHTML += `<div style="height: ${prosent}%"> ${temp}</div>`;
+                chart.innerHTML += "<div style='height:" + prosent + "%'>" + temp + "</div>";
+                //console.log(prosent);
+            }
+        }
+        
+        tegnStolper();
+    </script>
+</body>
+</html>

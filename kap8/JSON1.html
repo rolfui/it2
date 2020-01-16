@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JSON 1</title>
+    <link rel="stylesheet" href="css/styles1.css">
+</head>
+
+<body>
+   
+   <h2>JSON, Javascript Object Notation 1</h2>
+
+    <script>
+        
+        var person1 = {firstName:"Marit", lastName:"Bjørgen"};
+        var person2 = {firstName:"Aksel", lastName:"Lund Svindal"};
+        var person3 = {firstName:"Johann Olav", lastName:"Koss"};
+                
+        var persons=[person1,person2,person3];
+        
+        var strJson = JSON.stringify(persons);
+        
+        localStorage.myPersons = strJson;  //web storage
+        
+                
+        document.write(localStorage.myPersons);
+
+    </script>
+
+            
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+        var myPerson = JSON.parse(strJson);
+        
+        document.write("Fornavn: " + myPerson.firstName + "<br>");
+            document.write("Etternavn: " + myPerson.lastname + "<br>");
+        document.write("<br>");    
+
+               var myPerson = {firstName:"Marit", lastname:"Bjørgen"};
+        
+        document.write("Fornavn: " + myPerson.firstName + "<br>");
+        document.write("Etternavn: " + myPerson.lastname + "<br>");
+        document.write("<br>");
+        
+        var strJson = JSON.stringify(myPerson);
+        document.write(strJson + "<br>");
+
+       
+       
+       document.write("<br>");
+        
+        var strJson = JSON.stringify(myPerson);
+        document.write(strJson + "<br>");
+        
+        var myTempRect = JSON.parse(myRectJson);
+ -->

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Funksjoner</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Funksjon med parametere</h1>   
+    <div id="divSum"></div>
+    <script>
+        var divSum=document.getElementById("divSum");
+        var tall1=6;
+        var tall2=3;
+        
+        //Funksjon med parametere
+        //Funksjonsdefinisjon
+        function addTwoNumbers(a,b){
+            a=Number(a);
+            b=Number(b);
+            var sum=a+b;
+            
+            if(sum>5){
+                document.body.style.backgroundColor="green";
+            }
+
+            divSum.innerHTML=String(a) + " + " + String(b) + " = " + String(sum);
+        }
+        
+        addTwoNumbers(tall1,tall2); //funksjonskall
+        
+    </script>   
+
+</body>
+</html>

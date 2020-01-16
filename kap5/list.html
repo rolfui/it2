@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Canvas</title>
+    <link rel="stylesheet" href="css/styles.css">  
+</head>
+<body>
+    <canvas id="plotCanvas" width="400" height="400"></canvas>
+    <script>
+        var myCanvas=document.getElementById("plotCanvas");
+        var ctx=myCanvas.getContext("2d");
+        ctx.fillStyle="black";
+        
+        function f(x){
+            var result=0;
+            x=Number(x);  
+            
+            //result=(x*x)/300;
+            result=Math.pow(x,2)/300;
+            return result; 
+        }
+        
+        var pow=0;
+        for (var i=0; i<1001; i++){
+            pow=f(i);
+            ctx.fillRect(i,pow,1,1);
+        }
+        
+    </script>
+</body>
+</html>

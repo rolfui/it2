@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Anonyme funksjoner</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Hendelsesstyrte funksjoner</h1>   
+    
+    <button id="myBtn">Klikk</button>
+    <div id="mDiv">Min Div</div>
+    
+    <script>
+        var myButton=document.getElementById("myBtn");
+        var myDiv=document.getElementById("mDiv");
+        
+        myButton.onclick=function(){
+            alert("hei");
+        }
+        
+        myButton.onmousemove=function(evt){
+            myDiv.innerHTML="X: " + evt.clientX + "Y: " + evt.clientY;
+        }
+        
+        
+    </script>   
+
+</body>
+</html>
+
+
+

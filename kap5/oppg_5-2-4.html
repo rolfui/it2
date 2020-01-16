@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Oppgave 5.2.4</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Oppgave 5.2.4</h1>   
+    <div id="myDiv"></div>
+    <script>
+        var myDiv=document.getElementById("myDiv");
+        
+        function addDiv(tekst, bredde, bakgrunnsfarge, tekstfarge){
+            myDiv.innerHTML+=`<div style="width:${bredde}; color:${tekstfarge}; background-color:${bakgrunnsfarge}" >${tekst}<\div>`;
+        }
+        
+        addDiv("Hei på deg","300px","blue","red"); //funksjonskall
+        addDiv("Hei på meg","300px","green","yellow"); //funksjonskall
+        addDiv("Hei på deg","400px","#aaa","#f00"); //funksjonskall
+        
+    </script>   
+
+</body>
+</html>

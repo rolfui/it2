@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>getElementById</title>
+    <link rel="stylesheet" href="css/styles.css"> 
+</head>
+<body>
+    <p id="paragraph1"></p>
+    <script>
+        /* Vi bruker camelCase for variabelnavn
+         "" betyr at datatypen er String */
+        var par1 = document.getElementById("paragraph1");
+        var firstName = "";    // Deklarering og tilordning
+        var lastName = "";       
+        firstName = prompt("Hva er ditt fornavn?");  //tilordning
+        lastName = prompt("Hva er ditt etternavn?");  //tilordning
+        var name = firstName + " " + lastName;
+
+        //document.body.innerHTML = "Hei " + firstName + " " + lastName;
+        //document.body.innerHTML += "<br>Hei " + name;
+        par1.innerHTML = "<br>Hei " + name;
+        
+        
+    </script> 
+    
+</body>
+</html>

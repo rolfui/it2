@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <canvas id="plotCanvas" width="400" height="400"></canvas>
+    
+    <script>
+        var myCanvas=document.getElementById("plotCanvas");
+        var ctx=myCanvas.getContext("2d");
+    
+        var x=200;
+        var y=200;
+        var r=50;
+        
+        while(r<=200){
+            ctx.beginPath();  // for å hindre strekene mellom sirklene
+            ctx.arc(x,y,r,0,2*Math.PI);  // 2*pi = 360 grader. Vinkelen i radianer
+            ctx.stroke();
+            r+=5;
+        }
+        
+    </script>
+</body>
+</html>

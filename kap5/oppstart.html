@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Oppstart</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Hva blir</h1>   
+    <p id="myPar">Vinneren er: </p>
+    <script>
+        var myPar=document.getElementById("myPar");
+        var a=4;
+        var champion="Magnus Carlsen";
+        var challenger="Fabiano Caruana";
+        var ferdig = false;
+        var strOutput="";
+                
+        function whoWins(player1,player2){
+            var winner="";
+            var gameresult=Math.random(); //Tall mellom 0 og 0.9999999999
+            winner=gameresult>0.5 ? player1:player2;
+            return winner;
+        }
+        
+        while(!ferdig){
+            for (var i=0; i<10; i++){
+                if (a==2){ferdig=!ferdig;}
+                switch (whoWins(champion,challenger)){
+                    case challenger:
+                        strOutput=challenger;
+                        //a--;
+                        break;
+                    case champion:
+                        strOutput=champion;
+                        //a--;
+                        break;
+                    default:
+                        //a--;
+                }
+                a--;
+            }
+        }
+        myPar.innerHTML+=strOutput;
+    </script>   
+</body>
+</html>
+

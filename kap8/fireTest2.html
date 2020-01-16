@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <meta charset="utf-8">
+    <title>fireTest</title>
+    <link rel="stylesheet" href="css/styles.css">  
+</head>
+
+<body>
+    
+    <h2>fireBase test 2</h2>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+
+    <script>
+
+        // Initialize Cloud Firestore through Firebase
+        firebase.initializeApp({
+            apiKey: "AIzaSyDUEJb2D8IWr0I6S80yhOedacns3SPWEoA",
+            authDomain: "mytest-61c3e.firebaseapp.com",
+            projectId: "mytest-61c3e",
+        });
+
+        var db = firebase.firestore();
+
+        db.collection("persons").add({
+            first: "Rolf",
+            last: "Isachsen",
+            born: 1497
+        })
+        .then(function(docRef) {
+            console.log("Document written with ID: ", docRef.id);
+        })
+        .catch(function(error) {
+            console.error("Error adding document: ", error);
+        });
+
+        dbRes = db.collection("persons");
+        var query = dbRes.where("first", "==", "Rolf");
+        query.forEach(function(person){document.write(person)});
+    </script>
+    
+</body>
+</html>

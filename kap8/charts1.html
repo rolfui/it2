@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Charts 1</title>
+    <link rel="stylesheet" href="css/styles1.css">
+</head>
+
+<body>
+   
+   <h2>Charts 1</h2>
+   
+    <p>Temperaturer på Sicilia</p> <!--Tekst over stolpediagrammet-->
+    <div id="chart"></div>
+
+    <script>
+        var chart = document.getElementById("chart"); //Referanse til div vi skal legge stolper i
+        var temperaturer = [16, 16, 18, 21, 25, 30, 33, 33, 30, 25, 20, 17];
+        for(var temp of temperaturer){
+            chart.innerHTML += "<div style = 'width: "+ temp * 10 + "px'>"+ temp +"</div>";
+        }
+    </script>
+
+</body>
+</html>

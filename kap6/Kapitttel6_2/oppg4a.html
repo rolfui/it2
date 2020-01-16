@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Oppg4a</title>
+    <link rel="stylesheet" href="css/styles.css">  
+</head>
+<body>
+    <h1>Oppgave 4a</h1>
+    <div>
+        <label for="inpTall1">Legg sammen: </label>
+        <input id="inpTall1" type="number"  placeholder="Tall 1 ..." autofocus>
+        <input id="inpTall2" type="number"  placeholder="Tall 2 ...">
+        <button id="btnPlus">+</button>
+        <span id="spanResult"></span>
+    </div>
+    
+    <script>
+        var inpTall1 = document.getElementById("inpTall1");
+        var inpTall2 = document.getElementById("inpTall2");
+        var spanResult = document.getElementById("spanResult");
+        var btnPlus = document.getElementById("btnPlus");     
+        
+        btnPlus.onclick = function (){
+            let a=Number(inpTall1.value);
+            let b=Number(inpTall2.value);
+            let result=a+b;
+            spanResult.innerHTML=result;    
+        }
+        
+        
+        
+    </script> 
+
+</body>
+</html>

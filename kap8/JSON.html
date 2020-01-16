@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JSON</title>
+    <link rel="stylesheet" href="css/styles1.css">
+    <script src="json.js"></script>
+</head>
+
+<body>
+   <h2>JSON, Javascript Object Notation Web storage</h2>
+    <script>
+        class animal {
+            constructor (kind,legs,sound){
+                this.kind=kind;
+                this.legs=legs;
+                this.sound=sound;
+            }
+            get info(){
+                return "I am a " + this.kind;
+            }
+            
+            static fromJson(strJson){
+                var newAnimal=JSON.parse(strJson);
+                return new animal(newAnimal.kind,newAnimal.legs,newAnimal.sound);
+            }
+        }
+        
+        var myAnimal = animal.fromJson(strJsonRet);
+        
+        document.write("<p>I've got " + myAnimal.legs + " legs, when I speak I say " + myAnimal.sound + " and " + myAnimal.info);
+    
+    </script>
+</body>
+
+</html>
+
+
+
+
+    
+    <!--
+<body>
+   
+   <h2>JSON, Javascript Object Notation</h2>
+
+    <script>
+        
+        var person1 = {firstName:"Marit", lastName:"Bjørgen"};
+        var person2 = {firstName:"Aksel", lastName:"Lund Svindal"};
+        var person3 = {firstName:"Johann Olav", lastName:"Koss"};
+                
+        var persons=[person1,person2,person3];
+        
+        var strJson = JSON.stringify(persons);
+        
+        localStorage.myPersons = strJson;
+                
+        document.write(localStorage.myPersons);
+
+    </script>
+
+            
+</body>
+
+</html>
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+        var myPerson = JSON.parse(strJson);
+        
+        document.write("Fornavn: " + myPerson.firstName + "<br>");
+            document.write("Etternavn: " + myPerson.lastname + "<br>");
+        document.write("<br>");    
+
+               var myPerson = {firstName:"Marit", lastname:"Bjørgen"};
+        
+        document.write("Fornavn: " + myPerson.firstName + "<br>");
+        document.write("Etternavn: " + myPerson.lastname + "<br>");
+        document.write("<br>");
+        
+        var strJson = JSON.stringify(myPerson);
+        document.write(strJson + "<br>");
+
+       
+       
+       document.write("<br>");
+        
+        var strJson = JSON.stringify(myPerson);
+        document.write(strJson + "<br>");
+        
+        var myTempRect = JSON.parse(myRectJson);
+ -->

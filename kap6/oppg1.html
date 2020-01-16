@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>129</title>
+    <link rel="stylesheet" href="css/styles.css">  
+</head>
+<body>
+    <label id="lblNavn">Skriv tekst her:</label>
+    <input type="text" id="inpNavn">
+    <span id="txtNavn"></span>
+    <label id="lblNumber">Skriv tall her:</label>
+    <input type="email" id="inpNumber">
+    
+
+    <script>
+        var inpNavn = document.getElementById("inpNavn");
+        var txtNavn = document.getElementById("txtNavn");
+        var inpNumber = document.getElementById("inpNumber");
+        
+        inpNavn.oninput = function() { 
+            txtNavn.innerHTML = inpNavn.value;
+        }
+        
+        inpNavn.onfocus= function(){
+            inpNavn.value="";
+            //txtNavn.innerHTML="";
+            txtNavn.innerHTML=inpNumber.value;
+        }
+    </script>
+
+    </body>
+</html>

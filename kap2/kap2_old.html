@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Variabler tall</title>
+    <link rel="stylesheet" href="css/styles.css">  
+</head>
+<body>
+    <script>
+		var intLengde = 0;
+		var intBredde = 0;
+		var intHoyde = 0;
+		var intAreal= 0;
+		var intOmkrets = 0;
+		
+		intLengde = Number(prompt("Oppgi lengde"));
+		intBredde = prompt("Oppgi bredde");
+		
+		intAreal = intBredde * intLengde;
+		//intOmkrets = intBredde + intBredde + intLengde + intLengde;
+		intOmkrets = 2*(intBredde + intLengde );
+		
+		document.write("Arealet er " + intAreal + "<br>");
+		document.write("Omkretsen er " + intOmkrets);
+		
+    </script> 
+</body>
+</html>
+

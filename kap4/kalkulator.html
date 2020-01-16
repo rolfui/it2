@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>If</title>
+    <link rel="stylesheet" href="css/styles.css">  
+</head>
+<body>
+    <h1>Kalkulator</h1>    
+        
+<script>
+
+    //Starter med å deklarere variablene
+    //var tall1=0;
+    var tall1=Number(prompt("Tall1"));
+    var tall2=0;
+    var regneArt ="";
+    //henter tallene fra brukeren ved å bruke prompt.
+    //NB! prompt returner datatypen String
+    //tall1=prompt("Tall 1: ");       //tall1="3"
+    tall2=prompt("Tall 2: ");
+    regneArt=prompt("Regneart ( + - * / ) :");
+
+    //Omformer (casting) dem til datatypen Number
+    //tall1=Number(tall1);    // tall1=3
+    tall2=Number(tall2);
+    /*
+        Vi kunne gjort alt dette i en operasjon også:
+        var tall1=Number(prompt("Tall1"));
+    */
+
+    switch(regneArt){
+        case "+":
+            var sum = tall1+tall2;
+            var strSum = String(tall1) + " + " + String(tall2) + " = " + String(sum); 
+            document.write(strSum);
+            break;
+        case "-":
+            var diff = tall1 - tall2;
+            var strDiff = String(tall1) + " - " + String(tall2) + " = " + String(diff); 
+            document.write(strDiff);
+            break;
+        case "*":
+            var prod = tall1 * tall2;
+            var strProd = String(tall1) + " * " + String(tall2) + " = " + String(prod); 
+            document.write(strProd);
+            break;
+        case "/":
+            var strDiv="";
+            if(tall2 == 0){
+                strDiv = "Å dele på null er bare tull!";
+            } else {
+                var div = tall1 / tall2;
+                strDiv = String(tall1) + " / " + String(tall2) + " = " + String(div); 
+            }
+            document.write(strDiv);
+            break;
+        default:
+            document.write("Du må skrive inn + - * eller /");
+    }
+    
+/*
+    if(regneArt=="+"){
+        var sum = tall1+tall2;
+        var strSum = String(tall1) + " + " + String(tall2) + " = " + String(sum); 
+        document.write(strSum);
+    } else if(regneArt=="-"){
+        var diff = tall1 - tall2;
+        var strDiff = String(tall1) + " - " + String(tall2) + " = " + String(diff); 
+        document.write(strDiff);
+    }
+     else if(regneArt=="*"){
+        var prod = tall1 * tall2;
+        var strProd = String(tall1) + " * " + String(tall2) + " = " + String(prod); 
+        document.write(strProd);
+    }
+     else if(regneArt=="/"){
+        var strDiv="";
+        if(tall2 == 0){
+            strDiv = "Å dele på null er bare tull!";
+        } else {
+            var div = tall1 / tall2;
+            strDiv = String(tall1) + " / " + String(tall2) + " = " + String(div); 
+        }
+        document.write(strDiv);
+    }
+*/    
+    
+</script>
+
+</body>
+</html>

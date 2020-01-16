@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Map 2</h2>
+
+<script> 
+    var forfattere = new Map(); //Opprette en map 
+    var strOutput = "";
+    forfattere.set("001", "Arne Garborg"); 
+    forfattere.set(002, "Camilla Collet"); 
+    forfattere.set("003", "Bjørg  Vik"); 
+    
+    strOutput += forfattere.get("003") + "<br>";
+    
+    forfattere.set("003","Knut Hamsun");
+    strOutput += forfattere.get("003") + "<br>";
+    
+    strOutput += forfattere.has(2) ? forfattere.get(2) + "<br>" : "Elementet finnes ikke <br>";
+    strOutput += forfattere.has(3) ? forfattere.get(3) + "<br>" : "Elementet finnes ikke <br>";
+    
+    strOutput += "Da skulle listen vår totalt ha " + forfattere.size + " forfattere <br>";
+    document.write(strOutput);
+    
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JSON 2</title>
+    <link rel="stylesheet" href="css/styles1.css">
+</head>
+
+<body>
+   
+   <h2>JSON, Javascript Object Notation 2</h2>
+
+    <script>
+                
+        myArr = JSON.parse(localStorage.myPersons);
+        
+        for(let person of myArr){
+            document.write(person.firstName + " " + person.lastName + "<br>");        
+        }
+        
+    </script>
+
+            
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+        var myPerson = JSON.parse(strJson);
+        
+        document.write("Fornavn: " + myPerson.firstName + "<br>");
+        document.write("Etternavn: " + myPerson.lastname + "<br>");
+        document.write("<br>");    
+
+               var myPerson = {firstName:"Marit", lastname:"Bjørgen"};
+        
+        document.write("Fornavn: " + myPerson.firstName + "<br>");
+        document.write("Etternavn: " + myPerson.lastname + "<br>");
+        document.write("<br>");
+        
+        var strJson = JSON.stringify(myPerson);
+        document.write(strJson + "<br>");
+
+       
+       
+       document.write("<br>");
+        
+        var strJson = JSON.stringify(myPerson);
+        document.write(strJson + "<br>");
+        
+        var myTempRect = JSON.parse(myRectJson);
+ -->

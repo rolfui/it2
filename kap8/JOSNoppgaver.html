@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JSON</title>
+    <link rel="stylesheet" href="css/styles1.css">
+</head>
+
+<body>
+   
+<h2>JSON, Javascript Object Notation</h2>
+<!--
+<script>
+    class animal {
+        constructor(kind,legs,sound){
+            this.kind = kind;
+            this.legs = legs;
+            this.sound = sound;
+        }
+    }
+
+    var animal1 = new animal("Dog", 4, "bark");
+    var animal2 = new animal("Cat", 4, "mjau");
+    var animal3 = new animal("Parrot", 2, "Hi, how are you today?");
+
+    strJson = JSON.stringify(animal2);
+    document.write(strJson);
+</script>
+-->
+    
+<script>
+        
+   class animal {
+        constructor(kind,legs,sound){
+            this.kind = kind;
+            this.legs = legs;
+            this.sound = sound;
+        }
+    }
+
+    var animal1 = new animal("Dog", 4, "bark");
+    var animal2 = new animal("Cat", 4, "mjau");
+    var animal3 = new animal("Parrot", 2, "Hi, how are you today?");
+
+    var arrAnimal = [animal1,animal2,animal3];
+
+    strJson = JSON.stringify(arrAnimal);
+
+    document.write(strJson);
+        
+</script>
+
+            
+</body>
+
+</html>
+
+
+
+
+<!--
+        var myPerson = JSON.parse(strJson);
+        
+        document.write("Fornavn: " + myPerson.firstName + "<br>");
+        document.write("Etternavn: " + myPerson.lastname + "<br>");
+        document.write("<br>");    
+
+               var myPerson = {firstName:"Marit", lastname:"Bjørgen"};
+        
+        document.write("Fornavn: " + myPerson.firstName + "<br>");
+        document.write("Etternavn: " + myPerson.lastname + "<br>");
+        document.write("<br>");
+        
+        var strJson = JSON.stringify(myPerson);
+        document.write(strJson + "<br>");
+
+       
+       
+       document.write("<br>");
+        
+        var strJson = JSON.stringify(myPerson);
+        document.write(strJson + "<br>");
+        
+        var myTempRect = JSON.parse(myRectJson);
+ -->

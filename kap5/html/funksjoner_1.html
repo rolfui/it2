@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Funksjoner</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <!--<script src="js/functions.js"></script>-->
+
+</head>
+<body>
+    <h1>Funksjoner</h1>   
+    
+    <script>
+        
+        //funksjonsdefinisjon
+        function Sum(x,y){ //funksjonskropp
+            x=Number(x);
+            y=Number(y);
+            
+            var sum=x+y;
+            var result=0;
+            if(x>4){
+                result= sum;
+            } else {
+                result = 0;
+            }
+            
+            return result;
+        }        
+
+        var intSum = 0;
+        
+        intSum = Sum(5,5);  //funksjonskall
+        document.write("<p> Summen er: " + intSum + "</p>");
+        
+    </script>   
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    <p id="fibonacci"></p>
+    
+<script>
+    
+    var tall1=0;
+    var tall2=1;
+    var tall3=1;
+    var fib=document.getElementById("fibonacci");
+    var strResult="";
+    
+    while (tall3<10000){
+        strResult+="<p>" + tall3 + "</p>";
+        tall3=tall1+tall2;
+        tall1=tall2
+        tall2=tall3;
+    }
+    
+    fib.innerHTML=strResult;
+    
+</script>
+-->

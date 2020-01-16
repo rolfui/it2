@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <meta charset="utf-8">
+    <title>Array 2</title>
+    <link rel="stylesheet" href="css/styles.css">  
+</head>
+
+<body>
+<h2>Array 2; traversering</h2>
+
+<script>
+    var biler = ["Volvo", "ford", "Volkswagen", "bmw"];
+
+    biler.sort();
+    var startTime = performance.now();
+        
+    for(var bil of biler) { //Traverserer arrayet biler
+    //biler.forEach(function(bil,index){
+        if (bil == "bmw" ) {
+            bil += " med fire hjul";
+        }
+        document.write(bil + "<br>");
+    };
+    
+    var stopTime = performance.now();
+    
+    var diffTime = stopTime - startTime;
+    
+    document.write(diffTime + "<br>");
+    
+    document.write("The winner is: ", biler[Math.floor(Math.random()*biler.length)]);
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//    document.write(biler + "<br>");
+
+    
+/*    for(var bil of biler) { //Traverserer arrayet biler
+        if (bil == "Volkswagen" ) {
+            bil += " med fire hjul";
+        }
+        document.write(bil + "<br>");
+    }
+*/  
+
+    /*    
+    for(var i=0; i < biler.length; i++){
+        if (i==1) {
+            biler[i] += " med fire hjul";
+        }
+        document.write(biler[i] + "<br>");
+    }
+*/
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+/*
+    biler.sort(function (a, b) {
+        a = a.toUpperCase(); 
+        b = b.toUpperCase(); 
+        return b < a;
+    })
+    
+    document.write(biler + "<br>");
+  */  
+    
+    
+    
+ /*       
+    function sammenlignTekst(a, b) {
+        a = a.toUpperCase(); // =Volvo eks: bmw endres til BMW
+        b = b.toUpperCase(); // =bmw eks: Volvo endres til VOLVO
+        return b < a;   // True hvis b kommer før a i alfabetet og de
+                        //bytter plass.
+    }
+    
+    document.write(biler + "<br>");
+    biler.sort(sammenlignTekst);
+    document.write(biler + "<br>");
+*/
+    
+    
+//    biler.sort();
+//    document.write(biler + "<br>");
+
+
+    
+    //biler.push("Tesla");   //Legger til et element på slutten
+    //biler.unshift("Audi");  //Legger til et element på starten
+    //biler.pop();   //Fjerner et element på slutten
+    //biler.shift(); //Fjerner et element på starten
+
+    //biler[1]="Skoda";
+    //document.write(biler[1]);
+    
+        
+    
+//    filmer.sort();
+//    document.write(filmer + "<br>");
+    
+    //filmer.splice(2,2);
+
+    //filmer.splice(2,1,"Star Trek");
+    
+    
+    //document.write(filmer[1]);
+
+/*
+    var navnene = ["Charles", "anders", "Douglas", "Beate"];
+    function sammenlignTekst(a, b) {
+        a = a.toUpperCase(); //Charles endres til CHARLES
+        b = b.toUpperCase(); //anders endres til ANDERS
+        return b < a; //Returnerer true, og verdiene må bytte plass
+    }
+    document.write(navnene + "<br>");
+    navnene.sort(sammenlignTekst);
+    document.write(navnene); //Skriver: anders, Beate, Charles, Douglas
+*/
+    
+    /*    
+    var navnene = ["Charles", "anders", "Douglas", "Beate"];
+    navnene.sort(function (a, b) {
+        a = a.toUpperCase(); //Charles endres til CHARLES
+        b = b.toUpperCase(); //anders endres til ANDERS
+        return a-b;
+    })
+    document.write(navnene); //Skriver: anders, Beate, Charles, Douglas
+  */  
+    
+</script>
+    
+</body>
+</html>

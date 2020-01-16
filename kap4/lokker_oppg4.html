@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="utf-8">
+    <title>Canvas</title>
+    <link rel="stylesheet" href="css/styles.css">  
+</head>
+<body>
+    <canvas id="plotCanvas" width="400" height="400"></canvas>
+    <!--<canvas id="plotCanvas"></canvas> -->
+    <script>
+        var myCanvas=document.getElementById("plotCanvas");
+        var ctx=myCanvas.getContext("2d");
+        
+        var farger=["brown","black","cyan","orange","gray","blue","yellow","purple"];
+        
+        var xPos=0;         // øvre venstre x-koordinat hjørne av kvadrat
+        var yPos=0;         // øvre venstre y-koordinat av kvadrat
+        var dim=20;         // kvadratets bredde (og høyde, siden det er et kvadrat)
+        var padding=10;     // mellomrom mellom kvadratene
+        
+        for (var i=0;i<8;i++){                          // 8 rader
+            yPos=(dim+padding)*i;                       // y-koordinat for raden
+            for(var j=0;j<8;j++){                       // 8 kolonner
+                ctx.fillStyle=farger[j];                // 8 ulike farger, en for hver kolonne
+                xPos=(dim+padding)*j;                   //x-koordinat for kolonnen
+                ctx.fillRect(xPos,yPos,dim,dim);
+            }
+        }
+        
+        ctx.beginPath();
+        ctx.moveTo(0,0);
+        ctx.fillStyle = "black";
+        ctx.lineTo(400,0);
+        ctx.lineTo(400,400);
+        ctx.lineTo(0,400);
+        ctx.lineTo(0,0);
+        ctx.lineWidth=20;
+        ctx.stroke();
+    </script>
+</body>
+</html>

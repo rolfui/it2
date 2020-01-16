@@ -1,0 +1,13 @@
+body {
+    background-color:white;
+}
+
+input {
+    margin: 10px;
+}
+
+h1{
+    padding: 2px;
+    border-width: 2px;
+    margin: 2px;
+}

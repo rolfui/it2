@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Oppgave</title>
+    <link rel="stylesheet" href="css/styles.css">  
+</head>
+<body>
+    <h1>Oppgave</h1>    
+        
+<script>
+	var strTekst="";
+	var strDag="Lørdag";
+	
+	switch (strDag) {
+		case "Torsdag":
+		case "Fredag":
+			strTekst=strDag;
+			strTekst += ", snart helg :) Masse tid til koding, yesss !!!";
+			break;
+		case "Lørdag":
+		case "Søndag":
+			strTekst=strDag;
+			strTekst += ", nå er det HELG !! Masse tid til koding, yesss !!!";
+			break;
+		default:
+			strTekst=strDag;
+			strTekst += ", lenge til helga :) Masse tid til å kode før helga, yessss !!!";
+	}
+	
+	document.write(strTekst);
+	
+</script>
+
+</body>
+</html>

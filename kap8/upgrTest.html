@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Firebase</title>
+    <link rel="stylesheet" href="css/style5.css">
+</head>
+<body>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-app.js"></script>
+
+ <!--TODO: Add SDKs for Firebase products that you want to use 
+     https://firebase.google.com/docs/web/setup#config-web-app-->
+<script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDh4_p5QJpJhIwXAuX8HtQnoG0APlHlpBk",
+    authDomain: "upgrtest-9ee28.firebaseapp.com",
+    databaseURL: "https://upgrtest-9ee28.firebaseio.com",
+    projectId: "upgrtest-9ee28",
+    storageBucket: "upgrtest-9ee28.appspot.com",
+    messagingSenderId: "768148184770",
+    appId: "1:768148184770:web:02c8a4106d845fe9"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+
+<div id="divImage"></div>
+    
+<!-- Her begynner min kode. Alt ovenfor er klipp og lim  fra firbase + at linje 13 er lagt til manuelt  -->
+<script>
+    let database = firebase.database();
+    let pics = database.ref().child('pictures');
+    let divImage = document.getElementById("divImage");
+    
+    pics.on("child_added", function(snapshot) {
+        let picInfo = snapshot.val();
+        divImage.innerHTML += `<figure><figcaption>` + picInfo.Title + `</figcaption> <img src="` + picInfo.FileName + `"></img></figure>`;
+
+       /* divImage.innerHTML += "<figure><figcaption></figcaption><img src=\"" + picInfo.FileName + "\"></img></figure>";
+*/
+    
+        
+    });
+</script>    
+
+</body>
+</html>

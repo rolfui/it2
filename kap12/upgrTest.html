@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+</head>
+<body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-app.js"></script>
+
+ <!--TODO: Add SDKs for Firebase products that you want to use 
+     https://firebase.google.com/docs/web/setup#config-web-app-->
+<script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDh4_p5QJpJhIwXAuX8HtQnoG0APlHlpBk",
+    authDomain: "upgrtest-9ee28.firebaseapp.com",
+    databaseURL: "https://upgrtest-9ee28.firebaseio.com",
+    projectId: "upgrtest-9ee28",
+    storageBucket: "upgrtest-9ee28.appspot.com",
+    messagingSenderId: "768148184770",
+    appId: "1:768148184770:web:02c8a4106d845fe9"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script>
+    let database = firebase.database();
+    let pics = database.ref().child('pics');
+    
+    pics.on("child_added", function(snapshot) {
+        let picInfo = snapshot.val();
+        document.write(picInfo + "<br>");
+    });
+
+</script>    
+
+
+</body>
+    
+    
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <meta charset="utf-8">
+    <title>fireTest</title>
+    <link rel="stylesheet" href="css/styles.css">  
+</head>
+
+<body>
+    
+    <h2>fireBase test</h2>
+    <p id="pOutput">sjfadlsjfdsalfasdf</p>
+    
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDUEJb2D8IWr0I6S80yhOedacns3SPWEoA",
+        authDomain: "mytest-61c3e.firebaseapp.com",
+        databaseURL: "https://mytest-61c3e.firebaseio.com",
+        projectId: "mytest-61c3e",
+        storageBucket: "mytest-61c3e.appspot.com",
+        messagingSenderId: "407384860177"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <script>
+        let pOutput = document.getElementById("pOutput");
+        let dataBase = firebase.database();
+        let persons = dataBase.ref("persons");
+        
+        function addPerson(firstName,lastName){
+            let person = {"forNavn": firstName,"etterNavn":lastName};
+            persons.push(person);
+        }
+        
+        addPerson(prompt("Fornavn:"),prompt("Etternavn:"));
+
+        function visListe(snapshot){
+            pOutput.innerHTML+= snapshot.val().forNavn + " " + snapshot.val().etterNavn + "<br>";
+        }
+        
+        persons.on("child_added",visListe);
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+</head><body>
+
+<h2>Map 1</h2>
+
+<script>
+    var forfattere = new Map(); //En map med forfattere 
+
+    forfattere.set("001", "Henrik Ibsen"); //Legger til Henrik Ibsen med nøkkel(key) 001 
+    forfattere.set("002", "Ivar Aasen"); //Legger til Ivar Aasen med nøkkel 002 
+    forfattere.set("003", "Jonas Lie");
+    
+    document.write(forfattere.get("002") + ",");
+    document.write(forfattere.has("002") + ",");
+    document.write(forfattere.has("Jonas Lie") + "<br>");
+    
+    forfattere.set("003","Knut Hamsun");
+    document.write(forfattere.get("003") + "<br>");
+    
+    
+    document.write(forfattere.size + "<br>"); //Antall forfattere er 3    
+/*    
+    document.write(forfattere.has("002") + "<br>"); //Viser: true, Ivar Aasen har key = "002" 
+    document.write(forfattere.get("002") + "<br>"); //Viser: Ivar Aasen
+
+    forfattere.delete("002");
+    document.write(forfattere.size + "<br>");
+    document.write(forfattere.has("002") + "<br>");
+    
+*/
+    
+</script>
+    
+</body>
+</html>

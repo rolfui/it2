@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Oppgave</title>
+    <link rel="stylesheet" href="css/styles.css">  
+</head>
+<body>
+    <h1>Oppgave</h1>    
+        
+<script>
+	var terning1=Math.floor(Math.random()*6) +1;
+	var terning2=Math.floor(Math.random()*6) +1;
+	var terning3=Math.floor(Math.random()*6) +1;
+	
+	var sum=0;
+	var ant6=0;  //tellevariabel
+	
+	/*variabel som kan settes til false hvis det er umulig å få tre på rad. F.eks hvis vi har to eller tre like eller summen er større enn 6+5+4=15.*/
+	var boolRekkeMulig=true;
+	
+	document.write("<p>Terningene er kastet og fikk verdiene: " + terning1 + ", " + terning2 + ", " + terning3 + "<p>");
+	
+	if(terning1==6){
+		ant6++;  // ant6 = ant6 + 1   // ++ imkrementering
+	}
+	if(terning2==6){
+		ant6++;
+	}
+	if(terning3==6){
+		ant6++;
+	}
+	
+	if(ant6==1) {
+		document.write("<p>Det er " + ant6 + " sekser! </p>");
+	} else {
+		document.write("<p>Det er " + ant6 + " seksere! </p>");
+	}
+	
+    sum=terning1+terning2+terning3;
+	if(sum>15) {
+		document.write("<p>Summen er " + sum + " og dette er høyere enn 15</p>");
+		boolRekkeMulig=false;
+	} else {
+		document.write("<p>Summen er " + sum + " og dette er ikke høyere enn 15</p>");
+	}
+	
+	if(terning1==terning2 || terning1==terning3 || terning2==terning3){
+		document.write("<p>Minst to terninger er like!</p>");
+		boolRekkeMulig=false;
+	} else {
+		document.write("<p>Alle terningene er ulike!</p>");
+	}
+
+	if( (terning1==terning2) && (terning1==terning3) && (terning2==terning3) ) {
+		document.write("<p>Det er tre like terninger og verdien er " + terning1 + "</p>");
+		boolRekkeMulig=false;
+	} else {
+		document.write("<p>Det er ikke tre like terninger!</p>");
+	}
+	
+	var maxDiff=0; //variabel for maks differeranse. Må være 2 hvis det er tre på rad
+	var diff=0;
+	
+	if(boolRekkeMulig){
+		diff=(terning1-terning2);  //diff=1 //eks: t1=2 t2=4 abs(t1-t2)=abs(2-4)=abs(-2)=2
+		//maxDiff=(diff>maxDiff) ? diff : maxDiff;
+        if(diff>maxDiff){   //true 1>0
+            maxDiff=diff;   //maxdiff=1
+        }
+
+		diff=Math.abs(terning1-terning3);  // diff=1
+		//maxDiff=(diff>maxDiff) ? diff : maxDiff;
+        if(diff>maxDiff){  // 1>1 ? Nei
+            maxDiff=diff;
+        }
+        // maxdiff er fremdeles 1 her
+		diff=Math.abs(terning2-terning3);  //diff=2
+		//maxDiff=(diff>maxDiff) ? diff : maxDiff;
+        if(diff>maxDiff){   // er 2>1 : ja , true
+            maxDiff=diff;   // maxdiff = 2
+        }
+
+	}
+	if (maxDiff==2){
+		document.write("<p>Terningene er i rekkefølge: " + terning1 + ", " + terning2 + ", " + terning3 + "</p>");
+	} else {
+		document.write("<p>Terningene er ikke i rekkefølge!</p>");
+	}
+	
+	document.write("<p>Finished !</p>");
+	//document.write("<p>Finished ! maxDiff er " + maxDiff + "</p>");
+</script>
+
+</body>
+</html>

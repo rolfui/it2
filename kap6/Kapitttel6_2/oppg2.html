@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Oppg2</title>
+    <link rel="stylesheet" href="css/styles.css">  
+</head>
+<body>
+    <h1>Oppgave 2</h1>
+    <div>
+        <label for="inpText">Skriv inn tekst her: </label>
+        <input id="inpText" type="tekst" placeholder="Navn ..." autofocus><br>
+        <span id="spanContent"></span>
+        <input id="inpColor" type="color"><br>
+        <input id="inpDate" type="date"><br>
+        <input id="inpFile" type="file"><br>
+        <input id="inpRange" type="range" min="-10" max="10" value="0">
+        <span id=spanRange></span><br>
+        <input id="inpNumber" type="number"><br>
+        <input id="inpPassword" type="password"><br>
+    </div>
+    
+    <script>
+        var inpText = document.getElementById("inpText");
+        var inpRange = document.getElementById("inpRange");
+        var spanContent = document.getElementById("spanContent");
+        var spanRange = document.getElementById("spanRange");
+        
+        inpText.oninput=function(){
+            spanContent.innerHTML=inpText.value;
+        }
+
+        inpText.onfocus=function(){
+            inpText.value="";
+        }
+        
+        inpRange.onchange=function(){
+            spanRange.innerHTML=inpRange.value;
+        }
+        
+    </script> 
+
+</body>
+</html>

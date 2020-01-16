@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Map 2</h2>
+
+<script> 
+    var forfattere = new Map(); //Opprette en map 
+
+    forfattere.set("001", "Arne Garborg");   //forfattere.set(key,value);
+    forfattere.set("002", "Camilla Collet"); 
+    forfattere.set("003", "Bjørg  Vik"); 
+    forfattere.set("004", "Anne Cath Vestly"); 
+    
+    for(var forfatterId of forfattere.keys()) { //Traverserer nøklene 
+        document.write(forfatterId +"<br>");     } 
+    document.write("<br>");    
+    
+/*    var tableForfattere = []
+    for(var forfatter of forfattere) { //Traverserer verdiene 
+        document.write(forfatter +"<br>");  
+        tableForfattere.push(forfatter);
+    } 
+    document.write(JSON.stringify(tableForfattere));
+  */  
+//    console.log(tableForfattere);
+    
+    document.write("<br>");    
+    
+    /*function skrivUt(forfatter, forfatterId, map) {
+        document.write(forfatterId + ": " + forfatter + "<br>");
+    }
+    forfattere.forEach(skrivUt);
+    */
+        
+    forfattere.forEach(function(forfatter, forfatterId, map) {  
+        document.write(forfatterId + ": " + forfatter + "<br>"); 
+    });
+    
+    
+    
+    document.write("<br>");
+  
+    
+    
+</script>
+    
+</body>
+</html>

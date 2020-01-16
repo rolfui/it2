@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>button</title>
+    <link rel="stylesheet" href="css/styles.css">  
+</head>
+<body>
+    <h1>Button</h1>    
+    
+    <button id="btn">Endre sirkelens diameter</button>
+    <div id="sirkel"></div>
+    <script>
+        var btn=document.getElementById("btn");
+        var sirkel=document.getElementById("sirkel");
+        
+        sirkel.onclick=function(){
+            var radius=Math.random()*600;
+            sirkel.style.width=radius + "px";
+            sirkel.style.height=radius + "px";
+        }
+        
+        sirkel.addEventListener("click", function(){
+            let red=Math.floor(Math.random()*255)+1;
+            let green=Math.floor(Math.random()*255)+1;
+            let blue=Math.floor(Math.random()*255)+1;
+            //document.write(red);
+            sirkel.style.backgroundColor="rgb(" + red + "," + green + "," + blue +")" ; }
+        ); 
+    </script> 
+
+</body>
+</html>

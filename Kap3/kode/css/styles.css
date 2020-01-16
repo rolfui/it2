@@ -1,0 +1,21 @@
+body {
+    background-color: lightgray;
+}
+h1 {
+    color: red;
+}
+#head1 {
+    color:beige;
+}
+p {
+    color: red;
+}
+li {
+    color: white;
+}
+ol .listtype1 {
+    color: green;
+}
+ul .listtype1 {
+    color: blue;
+}

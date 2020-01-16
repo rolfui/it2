@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Eksempel s 121</title>
+    <link rel="stylesheet" href="css/styles.css">  
+</head>
+<body>
+    <h1>Sirkel</h1>    
+<!--    <button id="btn">Klikk for å endre diameter</button>-->
+    <div id="sirkel"></div>
+    <script>
+        //var btn=document.getElementById("btn");
+        var sirkel=document.getElementById("sirkel");
+        sirkel.onclick=function(){
+            var diameter=Math.random()*600;
+            sirkel.style.width=diameter + "px";
+            sirkel.style.height=diameter + "px";
+        }
+        
+        sirkel.addEventListener("click", function(){
+            let red=Math.floor(Math.random()*255)+1;
+            let green=Math.floor(Math.random()*255)+1;
+            let blue=Math.floor(Math.random()*255)+1;
+            //document.write(red);
+            sirkel.style.backgroundColor="rgb(" + red + "," + green + "," + blue +")" ; }
+        ); 
+    </script> 
+
+</body>
+</html>

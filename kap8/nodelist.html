@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Nodeliste</h2>
+
+    <div>En</div>
+    <div>To</div>
+    <div>Tre</div>
+    <div>Fire</div>
+    
+    <script>
+        var nodeList = document.getElementsByTagName("div"); //Nodeliste
+        
+        //var divArray = Array.from(nodeList); //Gjør om fra en nodelist til et array
+        
+        for(var divElement of nodeList){ //Traverserer div-elementene i arrayet
+            if (divElement.innerHTML=="Tre") {
+                divElement.style.background = "Red";
+            } else {
+                divElement.style.background = "Green";
+            }
+            
+            divElement.style.width = "50px";
+            divElement.style.height = "79px";
+            divElement.style.float = "left";
+            divElement.style.textAlign = "center";
+            divElement.style.marginRight = "5px";
+        }
+        
+        //document.write(nodeList[1].innerHTML);
+        
+function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                alert(allText);
+            }
+        }
+    }
+    rawFile.send(null);
+}
+
+
+
+readTextFile("file:///C:/your/path/to/file.txt");        
+
+    </script>
+</body>    
+</html>
+
+
+
+
+
+
+
+
+
+<!--        
+    var mySet=new Set(divArray);
+    for(var divElement of mySet){ //Traverserer div-elementene i arrayet
+-->

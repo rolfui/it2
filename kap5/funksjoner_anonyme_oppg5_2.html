@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Anonyme funksjoner</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Anonyme funksjoner</h1>   
+    
+    <canvas id="myCanvas" width="300px" height="300px"></canvas>
+    <div id="divStat"></div>    
+    <script>
+        var myCanv=document.getElementById("myCanvas");
+        var ctx=myCanvas.getContext("2d");
+        var divStat=document.getElementById("divStat");
+        var blDraw=false;
+        var blLine=false;
+        
+        myCanvas.onmousemove=function(evt){
+            if(blDraw){
+                var rect = myCanvas.getBoundingClientRect();
+                if(blLine){
+                    //ctx.beginPath();
+                    ctx.lineTo(evt.clientX-rect.left,evt.clientY-rect.top);
+                    ctx.stroke();
+                    
+                } else {
+                    ctx.fillRect(evt.clientX-rect.left,evt.clientY-rect.top,1,1);
+                }
+            }
+        }
+        
+        document.onkeydown=function(evt){
+            divStat.innerHTML=evt.keyCode;
+            ctx.beginPath();
+            switch(evt.keyCode){
+                case 16:
+                    blDraw = !blDraw;
+                    break;
+                case 76:
+                    blLine = !blLine;
+                    break;
+                case 82:
+                    ctx.fillStyle="red";
+                    ctx.strokeStyle="red";
+                    break;
+                case 66:
+                    ctx.fillStyle="blue";
+                    ctx.strokeStyle="blue";
+                    break;
+                case 67:
+                    ctx.clearRect(0,0,myCanv.width,myCanv.height);
+                    break;
+                //case 86:
+                //    ctx.stroke();
+                //    break;
+            }
+        }
+        
+    </script>   
+
+</body>
+</html>

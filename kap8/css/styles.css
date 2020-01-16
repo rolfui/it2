@@ -1,0 +1,23 @@
+body {
+    background-color:white;
+}
+
+#chart { /*CSS-stil til flexbox*/
+    display: flex;
+    width: 600px;
+    height: 300px;
+    flex-direction: row;
+    align-items: flex-end;
+}
+#chart > div { /*CSS-stil til flex items*/
+    background-color: DarkSeaGreen;
+    margin: 5px;
+    flex-grow: 1;
+    text-align: center;
+    color: white;
+    font-family: arial, verdana, sans-serif;
+}
+
+img {
+    width : 300px;
+}
