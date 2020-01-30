@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <p id="pOutput"></p>
+        <script>
+            var pOutput=document.getElementById("pOutput");
+            var arrNavn=["Charles", "anders", "Douglas", "Beate"];
+            function sammenlignTekst(a,b){
+                a=a.toUpperCase();
+                b=b.toUpperCase();
+                return b<a;
+            }
+
+            arrNavn.sort(sammenlignTekst);
+            //document.write(arrNavn);
+            pOutput.innerHTML=arrNavn;
+        </script>
+    
+    </body>
+</html>

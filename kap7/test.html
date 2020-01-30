@@ -1,19 +1,44 @@
 <!DOCTYPE html>
-<html lang="no">
-    <head>
-        <meta charset="UTF-8">
-        <title>iPad med SVG</title>
-    </head>
-    <body>
-        <script>
-            var a=5; //number
-            var b=Number(prompt("Gi meg et tall:"));  //string
-            
-            var sum=a+b;
-            
-            document.write("Sum= " + sum + "<br");
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <style>
+        #imgContainer {
+            background-color: blue;
+            width: 475px;
+            height: 390px;            
+            overflow: hidden;
+            margin: 50px auto;
+        }
+        #imgTaran {
+            width: 475px;
+            margin: 0px;;
+        }
+    </style>
+</head>
+<body>
+    <div id="imgContainer">
+        <img id="imgTaran" src="Tarantula_nebula_WISE.jpg">
+    </div>
+
+    <script>
+        var imgContainer=document.getElementById("imgContainer");
+        var imgTaran=document.getElementById("imgTaran");
+        imgTaran.style.width = "1900px";
         
-        </script>
-    
-    </body>
+        imgContainer.onmousemove = function(evt){
+            
+           // imgTaran.style.marginLeft= -3*(evt.offsetX) + "px";
+            console.log(imgTaran.style.marginLeft);
+            //imgTaran.style.marginTop= -3*(evt.clientY-imgContainer.offsetTop) + "px";
+        }
+        /*imgContainer.onmouseout = function(){
+            imgTaran.style.width = "475px";
+            imgTaran.style.marginLeft = "0px";
+            imgTaran.style.marginTop = "0px";
+        }*/
+
+</script>
+</body>
 </html>
