@@ -16,7 +16,11 @@
         biler.add("Volvo");
         biler.add("Volkswagen");
         biler.add("ford");
-        
+
+
+/*        var arrBiler = ["Volvo", "ford", "Volkswagen", "bmw"];
+        var biler = new Set(arrBiler);
+*/
         if(biler.has("Volvo")){
             divBiler.innerHTML += "<p>Volvo finnes i listen</p>";
         } else {
@@ -27,21 +31,23 @@
             divBiler.innerHTML += bil + ", ";
         }
         divBiler.innerHTML += "<br>";
-        
+
         biler.forEach(function (bil){
             divBiler.innerHTML += bil + ", ";
         });
         divBiler.innerHTML += "<br>";
-  
-         
+          
         biler.add("bmw");
         biler.delete("Volvo");
         
         biler.forEach(function(item) {
             divBiler.innerHTML += item + ", ";
         })
-    
-    
+        divBiler.innerHTML += "<br>";
+        
+        //divBiler.innerHTML += biler.size;
+        divBiler.innerHTML += biler.values();
+
     </script>
     
 </body>
