@@ -4,74 +4,45 @@
     <meta charset="utf-8">
     <title>Title</title>
 </head>
-    
 <body>
 
-<h2>Set</h2>
-
-<script>
-    
-    var biler = new Set();
-    
-    biler.add("bmw");
-    biler.add("Volvo");
-    biler.add("Volkswagen");
-    biler.add("ford");
-    
-    if(biler.has("Volvo")){
-        document.write("<p>Volvo finnes i listen</p>");
-    } else {
-        document.write("<p>Volvo finnes ikke i listen</p>");
-    }
-      
-    for (bil of biler){
-        document.write(bil);
-    }
-    
-    biler.forEach(function (bil){
-        document.write(bil);
-    });
-    
-    
-    
-/*    
-    biler.add("bmw");
-    biler.delete("Volvo");
-    
-    biler.forEach(function(item) {
-        document.write(item + ",");
-    })
-*/
-    
+    <h2>Set</h2>
+    <div id="divBiler"></div>
+    <script>
+        var divBiler=document.getElementById("divBiler");
+        var biler = new Set();
+        
+        biler.add("bmw");
+        biler.add("Volvo");
+        biler.add("Volkswagen");
+        biler.add("ford");
+        
+        if(biler.has("Volvo")){
+            divBiler.innerHTML += "<p>Volvo finnes i listen</p>";
+        } else {
+            divBiler.innerHTML += "<p>Volvo finnes ikke i listen</p>";
+        }
+        
+        for (bil of biler){
+            divBiler.innerHTML += bil + ", ";
+        }
+        divBiler.innerHTML += "<br>";
+        
+        biler.forEach(function (bil){
+            divBiler.innerHTML += bil + ", ";
+        });
+        divBiler.innerHTML += "<br>";
+  
+         
+        biler.add("bmw");
+        biler.delete("Volvo");
+        
+        biler.forEach(function(item) {
+            divBiler.innerHTML += item + ", ";
+        })
     
     
-    
-    
-    
-    
-    
-    
-    
-//    navneliste.add("Arne");
-//    navneliste.delete("Arne");
-    
-      
-    
-    
-/*    
-    var strListe="";
-    function printNavneliste(item){
-        strListe+= item + "<br>";
-    }
-
-    navneliste.forEach(printNavneliste);
-    document.write(strListe);
-  */  
-//    navneliste.clear();
-//    document.write(navneliste.size + "<br>") ;
-    
-    
-</script>
+    </script>
     
 </body>
 </html>
