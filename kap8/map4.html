@@ -6,14 +6,14 @@
 </head>
 <body>
 
-<h2>Map 2</h2>
+<h2>Map</h2>
 
 <script> 
     var forfattere = new Map(); //Opprette en map 
     var strOutput = "";
-    forfattere.set("004", "Arne Garborg"); 
-    forfattere.set("005", "Camilla Collet"); 
-    forfattere.set("006", "Bjørg  Vik"); 
+    forfattere.set("001", "Arne Garborg"); 
+    forfattere.set("002", "Camilla Collet"); 
+    forfattere.set("003", "Bjørg  Vik"); 
     
     forfattere.forEach(element => {
         console.log(element);
@@ -21,20 +21,28 @@
 
     console.log();
 
-    forfattere.delete;
+    forfattere.set("004", "Henrik Ibsen");
+    console.log(forfattere);
     var myArr= Array.from(forfattere);
-    myArr.pop();
-    myArr.pop();
+    //myArr.pop();
+    //myArr.pop();
+    
+    console.log(myArr);
 
     forfattere=new Map(myArr);
-    forfattere.forEach(element,key => {
+    
+    console.log(forfattere);
+    forfattere.forEach(function(element,key,forfattere) {
         console.log(element);
+        console.log(key);
     });
 
     for  (var [key,value] of forfattere){
         console.log(key,value);
     }
 
+    console.log(myArr[0]);
+    document.write(myArr);
 
 </script>
     
