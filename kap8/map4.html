@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Map 2</h2>
+
+<script> 
+    var forfattere = new Map(); //Opprette en map 
+    var strOutput = "";
+    forfattere.set("004", "Arne Garborg"); 
+    forfattere.set("005", "Camilla Collet"); 
+    forfattere.set("006", "Bjørg  Vik"); 
+    
+    forfattere.forEach(element => {
+        console.log(element);
+    });
+
+    console.log();
+
+    forfattere.delete;
+    var myArr= Array.from(forfattere);
+    myArr.pop();
+    myArr.pop();
+
+    forfattere=new Map(myArr);
+    forfattere.forEach(element,key => {
+        console.log(element);
+    });
+
+    for  (var [key,value] of forfattere){
+        console.log(key,value);
+    }
+
+
+</script>
+    
+</body>
+</html>
