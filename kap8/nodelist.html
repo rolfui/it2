@@ -9,14 +9,14 @@
 <h2>Nodeliste</h2>
 
     <div>En</div>
-    <div>To</div>
+    <div class="test">To</div>
     <div class="test">Tre</div>
     <div>Fire</div>
     
     <script>
-        var nodeList = document.getElementsByTagName("div"); //Nodeliste
+        //var nodeList = document.getElementsByTagName("div"); //Nodeliste
         //var nodeList = document.querySelectorAll("div"); //Nodeliste
-        //var nodeList = document.getElementsByClassName("test"); //Nodeliste
+        var nodeList = document.getElementsByClassName("test"); //Nodeliste
 
         //var divArray = Array.from(nodeList); //Gjør om fra en nodelist til et array
         
@@ -40,10 +40,9 @@
         */
         //document.write(nodeList[1].innerHTML);
 
+        console.log(nodeList);
 
 
-
-readTextFile("file:///C:/your/path/to/file.txt");        
 
     </script>
 </body>    

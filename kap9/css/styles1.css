@@ -2,7 +2,13 @@
     background-color: blue;
 	width: 200px;
 	height: 30px;
-	transition: width 2s linear 3s, height 4s ease 2s, background-color 1s;
+    transition: width 2s linear 3s, height 4s ease 2s, background-color 1s;
+    /*transition-property: width;
+    transition-duration: 2s;
+    transition-timing-function:
+    transition-delay: 3s;
+
+    */
 }
 
 .skalerbar:focus{

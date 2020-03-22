@@ -9,10 +9,9 @@
 <body>
    
    <h2>JSON, Javascript Object Notation 2</h2>
-
     <script>
                 
-        myArr = JSON.parse(localStorage.myPersons);
+        var myArr = JSON.parse(localStorage.myPersons);
         
         for(let person of myArr){
             document.write(person.firstName + " " + person.lastName + "<br>");        
@@ -20,7 +19,6 @@
         
     </script>
 
-            
 </body>
 
 </html>

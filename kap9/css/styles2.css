@@ -4,15 +4,16 @@ p {
     background-color: LimeGreen;
 	text-align: center;
 	transform-origin: left bottom;
+    
     transition: transform 2s;
+    transition-timing-function: ease;
+
 }
 
 
 p:active{
-    transform: rotate(70deg) scale(0.5);
-	background-color: red;
-
-    transition-timing-function: ease;
+    transform: rotate(70deg);/* scale(0.5);*/
+	/*background-color: red;j*/
 }
 
 

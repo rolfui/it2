@@ -2,7 +2,7 @@ body {
     background-color:white;
 }
 
-#chart  div { /*CSS for div-elementer (stolpene) i #chart*/
+#chart div { /*CSS for div-elementer (stolpene) i #chart*/
     height: 15px; /*Alle får samme høyde*/
     margin-bottom: 5px; /*Marg under hver stolpe*/
     background-color: DarkOrange;

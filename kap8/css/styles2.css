@@ -9,7 +9,7 @@ body {
     flex-direction: row;
     align-items:flex-end;
     overflow: auto;
-    flex-grow: 1;
+    /*flex-grow: 1;*/
 }
 
 #chart div { /*CSS-stil til flex items*/

@@ -1,0 +1,144 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+\geometry{top=2.5cm}
+\geometry{bottom=2.5cm}
+% \geometry{margin=2.5cm} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+\setlength{\headheight}{14pt}
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{Informasjonsteknologi 2}\chead{Posjektoppgave}\rhead{mars 2020}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{fvextra}
+\usepackage[dvipsnames]{xcolor}
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Prosjekt, Informasjonsteknologi 2, våren 2020}
+%\author{Rolf Ulrich Isachsen}
+\date{6. mars 2020} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+\lstset{
+    language=Python,
+    basicstyle=\small,
+    numbers=left,
+    numberstyle=\tiny,
+    frame=tb,
+    tabsize=4,
+    columns=fixed,
+    showstringspaces=false,
+    showtabs=false,
+    keepspaces,
+    commentstyle=\color{ForestGreen},
+    keywordstyle=\color{Purple},
+    identifierstyle=\color{black},
+    stringstyle=\color{Orange},
+    breaklines=true
+}
+
+\section{Innledning}
+    Prosjektet gjennomføres over en eriode på ca 4 uker og går parallellt med undervisning og annen aktivitet.Ideen er å bruke et prosjekt som utgangspunkt for læring om de ulike faser i et utviklingsprosjekt og de metoder og verktøy som er involvert:
+    \begin{itemize}
+        \item Ide
+        \item Planlegging
+        \item Oppfølging med oppdragsgiver/kunde
+        \item Arbeidsmetoder
+        \item Dokumentasjon, både teknisk- og brukerdokumentasjon
+        \item Kravspesifikasjon
+        \item Dokumentasjon av funksjonelle krav
+    \end{itemize}
+    Alle elever skal lage et prosjekt, men også være oppdragsgiver på et annet prosjekt. Konkretisering av dette komemr senere i dokumentet. Vi jobber i grupper på 1 til 3 personer. Ideelt sett er det best å jobbe sammen andre, men det er også greit å arbeide alene hvis man foretrekker det.
+    \subsection{Definisjoner som brukes videre i dokumentet}
+        \begin{itemize}
+            \item Leverandør: Gruppen som gjennomfører prosjektet
+            \item Oppdragsgiver: Gruppen som skriver kravspesifikasjon
+        \end{itemize}
+        Alle elever er medlemmer i en gruppe (1 - 3 personer) og denne gruppen er \textbf{leverandør} av et prosjekt og \textbf{oppdragsgiver} til et annet prosjekt. For at oppgaven skal være mest  mulig givende for utviklerne, vil oppdragsgivers krav være i samråd med leverandør. Det betyr at kravene er i tråd med det leverandøren har tenkt å gjøre i prosjektet. Det er ikke oppdragsgivers rolle å spesifisere hva som skal gjøres, men stille krav som passer inn i leverandørens plan. Dette vil være litt annerledes i et prisjekt med en virkelig kunde, men her gjør vi det bare for treningens og læringens skyld.
+
+\section{Gjennomføring}
+    \subsection{Generelt}
+        En liste over forslag til oppgaver ligger i OneNote. Alle elever kan foreslå oppgaver. Deretter velger alle hvilket prosjekt de skal jobbe på ved å registrere seg i skjema på OneNote og avtaler også hvem de skal jobbe i gruppe med. Dette vil være en litt dynamisk prosess til vi får alt på plass og alle har en gruppe og et prosjekt. Det er ingen begrensning på hvor mange grupper som kan ta samme prosjekt. Når du har valgt et prosjekt er du med i en gruppe som er leverandør av prosjektet.
+        
+        Hver gruppe får så tildelt et prosjekt de skal være \textit{oppdragsgiver} til. Dette gjøres enten gjennom at vi bare blir enige, eller ved trekning. For at det skal være mest mulig lystbetont å løse selve oppgaven, foreslås det at leverandøren lager en skisse over den løsningen de ønsker å lage. Deretter lager oppdragsgiveren en kravspesifikasjon basert på denne løsningen.
+    \subsection{Plan}
+        \begin{enumerate}
+            \item Alle elever velger prosjekt og gruppene blir satt opp. Da er alle gruppene leverandør for et prosjekt.
+            \item Alle grupper blir tilordnet et prosjekt de skal være oppdragsgiver til.
+            \item Leverandør setter opp en skisse/plan for hvordan de tenker prosjektet skal løses og gjør denne tilgjengelig for oppdragsgiver. Bør inneholde nødvendige skisser og wire-frames.
+            \item Oppdragsgiver lager en kravspesifikasjon basert på leverandørens skisse. Kravspesifikasjonen skal inneholde ca 3 punkter som må kunne vurderes. F.eks: Hvis ballen treffer mellom spiller A sine målstenger og bak mållinjen skal spiller B sin poengsum økes med 1. Hvis man derimot skriver: Programmet skal ha fine farger, bør man spesifisere hva som er fine farger og kanskje ha et møte med leverandør for å være sikker på at man er enige om hvilke farger som er "fine". Eventuelt at leverandør bes legge fram noen designforslag som vurderes underveis i prosessen, men dette blir nok for omfattende for vårt prosjekt.
+            \item Kort møte mellom leverandør og oppdragsgiver i for å gå igjennom kravspesifikasjonen.
+            \item Leverandør velger arbeidsmetode med begrunnelse fra kapittel 11:
+                \begin{itemize}
+                    \item Vannfallsmetode (waterfall)
+                    \item Smidig utvikling (agile) med scrum
+                    \item Lean startup
+                \end{itemize}
+            \item Plan for prosjektet utarbeides med nødvendige skisser og eventuelle wire-frames.
+            \item Arbeidet på selve prosjektet starter.
+            \item Dokumentasjon utarbeides. Helst i parallell med forrige punkt.
+            \item Underveismøte mellom oppdragsgiver og leverandør.
+            \item Leverandøren tester sin løsning:
+                \begin{itemize}
+                \item Minst en funksjon testes med ulike verdier programmessig. Testen dokumenteres. Eks: Hvis vi har funksjonen: \textit{function add(a,b){return a+b;} } , gir det mening å sende inn både tekst, tall, ulike verdier for a og b, både flyttall og heltall, etc.
+                \item Testing av løsning med testplan og testrapport
+            \end{itemize}
+            \item Levering av prosjekt med kort framføring av løsningen for klassen og publisering på it2.hvgs.it
+            \item Oppdragsgiver tester opp mot kravspesifikasjon og gir en kort vurdering av leverandørens produkt.
+            \item Leverandøren gir en kort vurdering av eget produkt.
+        \end{enumerate}
+\section{Tidsplan}
+    Punktene under tilsvarer punktene over.
+    \begin{itemize}
+        \item[1-5:] I løpet av timen tirsdag 10. mars.
+        \item[6-7:] Plan med skisser og arbeidsmetode leveres torsdag 12. mars
+        \item[10:] Underveismøte: 
+        \item[11:] Testrapport leveres.
+        \item[12:] Framføring og opplasting: 
+        \item[13:] Vurdering leveres.
+        \item[14:] Vurdering leveres.    
+    \end{itemize}
+\end{document}
