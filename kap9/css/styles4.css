@@ -10,6 +10,12 @@ div {
 	position: absolute;
 }
 
+#fadeDiv{
+	background-color: orange;
+	top: 100px;
+	left: 500px;
+}
+
 .buttons{
 	top:0px;
 	background-color: white;

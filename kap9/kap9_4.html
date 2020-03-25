@@ -15,7 +15,9 @@
        	</div>
 		
         <div id="animDiv">Web Animations API, WAAPI</div>
-        
+		
+		<div id="fadeDiv">Hello world :)</div>
+
         <script>
 			var myDiv = document.getElementById("animDiv");
 			var btnStart = document.getElementById("btnStart");
@@ -23,6 +25,14 @@
 			var btnReverse = document.getElementById("btnReverse");
 			var myInp = document.getElementById("myInp");
 			
+			var fadeDiv = document.getElementById("fadeDiv");
+
+			fadeDiv.animate([
+				{opacity:0},
+				{opacity:1}],
+				2000
+				)
+
 			var myAnim = myDiv.animate([
 				{transform: "rotate(0deg)", top: "100px", left: "0px"},
 				{transform: "rotate(70deg)", top: "200px", left: "100px"}
