@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="css/styles4.css">
     </head>
     <body>
+		<h1>WAAPI, Web Animations API</h1>
        	<div class="buttons">
        		<button id="btnStart">Start</button>
        		<button id="btnPause">Pause</button>
@@ -29,13 +30,13 @@
 
 			fadeDiv.animate([
 				{opacity:0},
-				{opacity:1}],
-				2000
-				)
+				{opacity:1}] ,
+				5000
+				);
 
 			var myAnim = myDiv.animate([
-				{transform: "rotate(0deg)", top: "100px", left: "0px"},
-				{transform: "rotate(70deg)", top: "200px", left: "100px"}
+				{transform: "rotate(0deg)", top: "200px", left: "20px"},
+				{transform: "rotate(70deg)", top: "300px", left: "120px"}
 			],{
 				duration: 2000,  //millisekunder 2000 ms  = 2 s
 				easing: "ease-in-out",
