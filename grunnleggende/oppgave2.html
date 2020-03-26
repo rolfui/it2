@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="UTF-8">
+        <title>Størst og minst</title>
+    </head>
+    <body>
+        <div id="divOutput"></div>
+        <script>
+            var divOutput = document.getElementById("divOutput");
+
+            numArr = [2,3,55,44,333,663,22,3,654,888];
+            // for (i=0; i<10; i++){
+            //     numArr[i] = Math.floor(Math.random()*1001);
+            // }
+            numMin = Infinity;
+            numMax = - Infinity
+            for (num of numArr){
+                console.log(num);
+                if(num < numMin){
+                    numMin = num;
+                } 
+                if(num > numMax){
+                    numMax = num;
+                }
+            }
+
+            divOutput.innerHTML  = "Minste tall: " + numMin + "<br>";
+            divOutput.innerHTML += "Største tall: " + numMax;
+            
+       </script>
+    </body>
+</html>
