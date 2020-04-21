@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Objects</title>
+    <link rel="stylesheet" href="css/styles1.css">
+</head>
+
+<body>
+   
+   <h2>Objects and classes</h2>
+
+    <script>
+		
+		class rectangle{	//superklasse, parent
+			constructor(width, height){
+				width = Number(width);
+				height = Number(height);
+				if(width<=0){width = -width};
+				if(height<=0){height = -height};
+			
+				this._width = width;
+				this._height = height;
+			}
+			
+            get width(){
+                return this._width;
+            }
+
+            set width(width){
+                if(width<=0){width = -width};
+                myRect._width = width;
+            }
+
+            get height(){
+                return this._height;
+            }
+
+            set height(height){
+                this._height = height;
+            }
+
+			get area(){
+				return this._width * this._height;
+			}
+			get perimeter(){
+				return 2* (this._width + this._height);
+			}
+			
+			info(){
+				document.write("<p>Jeg er et rektangel! </p>");
+			}
+			
+		}
+		
+		class square extends rectangle{			//subklasse, child
+			constructor(sides){
+				super(sides,sides);
+			}
+			get perimeter(){
+				return 4* this.width;
+			}
+			
+			get sides(){
+				return this.width;
+			}
+			
+			set sides(sides){
+				this._width = sides;
+				this._height = sides;
+			}
+
+			info(){
+				document.write("<p>Jeg er et kvadrat! </p>");
+			}
+		}
+		
+		var myRect = new rectangle(300, 200);
+        myRect.width = 400;
+        
+		document.write("Bredde: " + myRect.width + "<br>");
+		document.write("Høyde: " + myRect.height + "<br>");
+		document.write("Areal: " + myRect.area + "<br>");
+		document.write("Omkrets: " + myRect.perimeter + "<br>");
+		myRect.info();
+
+	</script>
+	
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+<!---        <link rel="stylesheet" href="flappybird.css"> -->
+        <style>
+            #spill{
+                position: relative;
+                background-image:url("bilder/side 308 bakgrunn.png");
+                background-attachment: fixed;
+                width: 288px;
+                height: 384px;
+            }
+            #fugl{
+                position: absolute;
+                background-image: url("bilder/side 308 fugl liten.png");
+                width: 34px;
+                height: 24px;
+                left: 30px;
+            }
+        </style>
+    </head>
+ 
+<body>
+    <div id="spill">
+        <div id="fugl">
+            
+        </div>
+    </div>
+     
+ 
+    <script>
+        var spill = document.getElementById("spill");
+        var fugl = document.getElementById("fugl");
+        var krasjhoyde = 360;
+        var fuglpos = 100;
+        var fuglenFlyr = true;
+        var gravitasjon = 0.1;
+        var fallfart = 1;
+        var bgpos = 500;
+        var bgfart = -1;
+        function fly(){
+            fallfart+=gravitasjon;
+            fuglpos+=fallfart;
+            fugl.style.top = fuglpos + "px";
+            if(fuglpos>krasjhoyde){
+                fuglenFlyr=false;
+            }
+        }
+        function bevegBakgrunn(){
+            bgpos += bgfart;
+            console.log(bgpos);
+            //spill.style.backgroundposition=bgpos+"px 0px";
+            spill.style.backgroundPosition = bgpos + "px 0px";
+        }
+        function gameLoop(){
+            bevegBakgrunn();
+            fly();
+            if(fuglenFlyr){
+                requestAnimationFrame(gameLoop);
+            }
+        
+            if (fuglenFlyr==false){
+                //alert("Game over");
+            }
+
+        }
+        gameLoop();
+
+        function flaks(){
+            fallfart = -4;
+        }
+        spill.onclick = flaks;
+    </script>
+
+</body>
+ 
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fakultet</title>
+    </head>
+    <body>
+        <div>
+            <h1>Fakultet</h1>
+            <label for="inpNum">Sett inn n</label>
+            <input id="inpNum" type="number" placeholder="Settt inn tall" min="0">
+            <span id="spanResult"></span>
+        </div>
+        <script>
+            var divOutput = document.getElementById("divOutput");
+            var inpNum = document.getElementById("inpNum");
+            var spanResult = document.getElementById("spanResult");
+
+            function factorial(n){
+                n = Number(n);
+                //n = Math.round(n);
+                if (n<0){
+                    return 0;   // indicating that the function failed
+                }
+
+                let fact = 1;
+                for (let i=n; i>0; i--){
+                    fact = fact*i;
+                }
+                return fact;
+            }
+
+            inpNum.oninput = function(){
+                spanResult.innerHTML = factorial(inpNum.value);
+            }
+
+       </script>
+    </body>
+</html>
