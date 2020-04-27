@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Byer</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+<form id="regBy">
+    <input id="inpNavn" type ="text" required placeholder="Navn på by">
+    <input id="inpInnbyggere" type ="number" required placeholder="Antall innbyggere">
+    <button type="submit">Registrer ny by</button>
+</form>
+<table>
+    <thead>
+        <tr><th>Navn</th><th>Antall innbyggere</th></tr>
+        <tbody id="tblByer"></tbody>
+    </thead>
+</table>
+
+<script>
+    var regBy = document.getElementById("regBy");
+    var inpNavn = document.getElementById("inpNavn");
+    var inpInnbyggere = document.getElementById("inpInnbyggere");
+    var tblByer = document.getElementById("tblByer");
+    var byer = [];
+
+    class By{
+        constructor(navn,innbyggere){
+            this.navn = navn;
+            this.innbyggere = innbyggere;
+        }
+        get tabellrad(){
+            var rad = `<tr>
+                <td>${this.navn}</td>
+                <td>${this.innbyggere}</td>
+            </tr>`;
+            return rad;
+        }
+    }
+
+    function visByer(){
+        tblByer.innerHTML = "";
+        for(var by of byer){
+            tblByer.innerHTML += by.tabellrad;
+        }
+    }
+
+    regBy.onsubmit = function(evt){
+        evt.preventDefault();
+        var nyttNavn = inpNavn.value;
+        var nyeInnbyggere = Number(inpInnbyggere.value);
+        var nyBy = new By(nyttNavn, nyeInnbyggere);
+        byer.push(nyBy);
+        localStorage.mineByer = JSON.stringify(byer);
+        sessionStorage.mineByer = JSON.stringify(byer);
+        visByer();
+    }
+
+</script>
+
+</body>
+</html>

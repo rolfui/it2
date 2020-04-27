@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Byer</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+<table>
+    <thead>
+        <tr><th>Navn</th><th>Antall innbyggere</th></tr>
+        <tbody id="tblByer"></tbody>
+    </thead>
+</table>
+
+<script>
+    var tblByer = document.getElementById("tblByer");
+    var byer = [];
+
+    class By{
+        constructor(navn,innbyggere){
+            this.navn = navn;
+            this.innbyggere = innbyggere;
+        }
+        get tabellrad(){
+            var rad = `<tr>
+                <td>${this.navn}</td>
+                <td>${this.innbyggere}</td>
+            </tr>`;
+            return rad;
+        }
+    }
+
+    function visByer(){
+        tblByer.innerHTML = "";
+        for(var by of byer){
+            tblByer.innerHTML += by.tabellrad;
+        }
+    }
+
+    var byer = [];
+    if (localStorage.mineByer){
+        utpakkedeByer = JSON.parse(localStorage.mineByer);
+        
+        for(let by of utpakkedeByer){
+            let nyBy = new By(by.navn, by.innbyggere);
+            byer.push(nyBy);
+        }
+        visByer();
+    }
+
+</script>
+
+</body>
+</html>
